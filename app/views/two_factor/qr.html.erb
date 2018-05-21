@@ -1,0 +1,9 @@
+<p>Please scan the QR code:</p>
+<%= image_tag @qr_code %>
+<br/>
+<%= "or use the following code: #{current_user.tfa_cipher}" %>
+<%= form_for "", url: users_sessions_verify_otp_path, method: :post do |f| %>
+  <%= f.label :otp_attempt %>
+  <%= f.text_field :otp_attempt %>
+  <%= f.submit "Verify" %>
+<% end %>
