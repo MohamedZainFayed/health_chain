@@ -1,16 +1,26 @@
-<h2>Forgot your password?</h2>
+<div class="login-page">
+  <div class="container">
+    <div class="login-logo txt-center">
+      <%= image_tag("logo.svg", :alt => "Health Chain") %>
+      <p class="white heading-font">Health Chain</p>
+    </div>
+    <h2 class="login-title txt-center txt-lvl-4 txt-font white">Forgot Passowrd</h2>
+    <div class="login-form">
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+        <%= devise_error_messages! %>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <div class="field">
+        <i class="zmdi zmdi-email"></i>
+          <%= f.email_field :email, autofocus: true, autocomplete: "off", placeholder: "Enter Your Email Address" %>
+        </div>
+        <div class="actions m-t-2">
+          <%= f.submit "Send Reset Instructions" %>
+        </div>
+        <p class="pd-t-2 kinda-white txt-lvl-2 txt-center txt-font">
+          <%= link_to "Login", new_session_path(resource_name) %> -  
+          <%= link_to "Sign Up", new_registration_path(resource_name) %>
+        </p>
+      <% end %>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
