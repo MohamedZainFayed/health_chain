@@ -8408,3 +8408,86 @@ Processing by Users::SessionsController#new as HTML
 Completed 200 OK in 429ms (Views: 426.7ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/users/password/edit?reset_password_token=[FILTERED]" for 127.0.0.1 at 2018-05-25 21:44:56 +0200
+  [1m[35m (2.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Devise::PasswordsController#edit as HTML
+  Parameters: {"reset_password_token"=>"[FILTERED]"}
+  Rendering devise/passwords/edit.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/passwords/edit.html.erb within layouts/application (67.0ms)
+Completed 200 OK in 1269ms (Views: 1148.8ms | ActiveRecord: 14.0ms)
+
+
+Started GET "/users/password/edit?reset_password_token=[FILTERED]" for 127.0.0.1 at 2018-05-25 21:48:57 +0200
+Processing by Devise::PasswordsController#edit as HTML
+  Parameters: {"reset_password_token"=>"[FILTERED]"}
+  Rendering devise/passwords/edit.html.erb within layouts/application
+  Rendered devise/passwords/edit.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 284ms (Views: 244.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/edit?reset_password_token=[FILTERED]" for 127.0.0.1 at 2018-05-25 21:48:59 +0200
+Processing by Devise::PasswordsController#edit as HTML
+  Parameters: {"reset_password_token"=>"[FILTERED]"}
+  Rendering devise/passwords/edit.html.erb within layouts/application
+  Rendered devise/passwords/edit.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 316ms (Views: 279.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/edit?reset_password_token=[FILTERED]" for 127.0.0.1 at 2018-05-25 21:49:26 +0200
+Processing by Devise::PasswordsController#edit as HTML
+  Parameters: {"reset_password_token"=>"[FILTERED]"}
+  Rendering devise/passwords/edit.html.erb within layouts/application
+  Rendered devise/passwords/edit.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 480ms (Views: 337.3ms | ActiveRecord: 0.0ms)
+
+
+Started PUT "/users/password" for 127.0.0.1 at 2018-05-25 21:49:35 +0200
+Processing by Devise::PasswordsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"noHlVTMa760l/XMnXE0qQCxD30kW7o0Tsn2eKkA5V0FekSdJ7Antz2TrsBecJm6EUypvllxCZf+vWnkUEBcTww==", "user"=>{"reset_password_token"=>"[FILTERED]", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Change my password"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`reset_password_token` = '05f92deed4329ab2f3e7380cccadd02e2670833d1e7105d9a6b1f6a3b74c28ac' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering devise/passwords/edit.html.erb within layouts/application
+  Rendered devise/passwords/edit.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 980ms (Views: 324.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-25 21:50:53 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 753ms (Views: 746.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-25 21:51:17 +0200
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 201ms (Views: 175.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-25 21:51:27 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 540ms (Views: 541.2ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-05-25 21:51:34 +0200
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"fKLE3onhYq/qPdFd2n2kji9EfuE6iqth4Iy4GFF5TTeJh0ow8rrIap4+6hl3IyK3efh8xXwBHbAKV3gGMLdkAQ=="}
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 28ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-25 21:51:35 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 292ms (Views: 292.1ms | ActiveRecord: 0.0ms)
+
+
