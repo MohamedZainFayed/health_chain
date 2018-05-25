@@ -11,7 +11,7 @@
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field">
           <i class="zmdi zmdi-email"></i>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "Email Address" , autocomplete: "off"%>
+          <%= f.email_field :email, autofocus: true, placeholder: "Email Address" , autocomplete: "off" %>
         </div>
 
         <div class="field">

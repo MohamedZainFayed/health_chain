@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css');
 @import 'cera';
+
 $txt-font: 'Lato', sans-serif;
 $heading-font: 'cera',  sans-serif;
 
@@ -16,11 +17,21 @@ $white: #fff;
 $kinda-white: rgba(255,255,255,0.8);
 $black: #000;
 $green : #00b978;
+$blue:#00c7ff;
+$kinda-blue: #1bb8c3;
+$red: #e2252b;
 a{
     color: inherit !important; text-decoration: none;
 }
 a:hover, a:active{
     text-decoration: underline;
+}
+body{
+    font-family: $txt-font, $heading-font;
+}
+body * {
+    outline: 0 !important;
+    box-sizing: border-box;
 }
 body,h1,h2,h3,h4,h5,h6,p,input{ margin:0;letter-spacing: 0.5px; }
 .txt-center{ text-align: center; }
@@ -40,3 +51,91 @@ body,h1,h2,h3,h4,h5,h6,p,input{ margin:0;letter-spacing: 0.5px; }
 .black{ color: $black }
 .pd-t-2{ padding-top:20px;padding-bottom:20px; }
 .m-t-2{ margin-top: 20px; }
+.m-t-3{ margin-top: 30px; }
+.m-t-4{ margin-top: 40px; }
+.m-t-5{ margin-top: 50px; }
+.container{
+    display: inline-block;
+    width: 100%;
+    padding: 0 10px;
+    max-width: 1400px;
+}
+// default container
+.container-sm{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 15px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+// default input
+input.default-input{
+    width: 100%;
+    border: 1px solid rgb(216, 216, 216);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    outline: 0 !important;
+    transition: 0.3s;
+}
+input.default-input:focus{
+    border-color: $kinda-blue;
+}
+label.default-label{
+    font-size: 16px;
+    display: inline-block;
+    width: 100%;
+    // font-weight: bold;
+    margin-bottom: 5px;
+    padding-left: 20px;
+}
+.form-group{
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+button{
+    outline: 0 !important;
+}
+.default-btn{
+    background: #fff;
+    color: $kinda-blue;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px 15px;
+    border: 1px solid $kinda-blue;
+    border-radius: 20px;
+    min-width: 120px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.default-btn:hover{
+    background: $kinda-blue;
+    color: $white;
+}
+.red-btn{
+    border-color: $red;
+    color: $red;
+}
+.red-btn:hover{
+    color: $white;
+    background: $red;
+    border-color: $red;
+}
+.btn-right{
+    float: right;
+}
+
+// titles
+.section-title {
+    font-size: $txt-lvl-4;
+    padding-bottom: 5px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+.padding-footer{
+    display: inline-block;
+    width: 100%;
+    padding: 50px;
+}

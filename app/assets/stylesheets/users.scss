@@ -9,7 +9,11 @@
     width: 100vw;
     box-sizing: border-box;
     min-height: 100vh;
-    padding: 30px;
+    padding: 50px;
+    padding-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .login-logo{
     font-size: 26px;
@@ -18,6 +22,14 @@
 .login-logo img{
     width: 100%;
     max-width:100px;
+    animation: rotate 20s linear;
+    animation-iteration-count: infinite;
+    transform: rotate(0deg);
+}
+@keyframes rotate{
+    100%{
+        transform: rotate(360deg)
+    }
 }
 .login-title span {
     font-size: 14px;
@@ -47,6 +59,17 @@
     // color: $white;
     font-size: 22px;
 }
+input:-webkit-autofill{
+    background-color: #000 !important;
+}
+/* Change the white to any color ;) */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #25bcc2 inset;
+}
+/*Change text in autofill textbox*/
+input:-webkit-autofill {
+    -webkit-text-fill-color: #fff !important;
+}
 .login-form input{
     width: 100%;
     box-sizing: border-box;
@@ -66,6 +89,7 @@
     font-size: 16px;
     font-weight: bold;
     color: $green;
+    cursor: pointer;
 }
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 color: rgba(255,255,255,0.7);;
@@ -79,7 +103,7 @@ color: rgba(255,255,255,0.7);;
 :-moz-placeholder { /* Firefox 18- */
 color: rgba(255,255,255,0.7);;
 }
-p.alert-danger , #error_explanation{
+p.alert-danger, p.alert-success , #error_explanation{
     position: fixed;
     background: rgba(0,0,0,0.2);
     border-radius: 10px;
@@ -106,4 +130,39 @@ p.alert-danger , #error_explanation{
     100%{
         transform: translateY(0px)
     }
+}
+
+// edit profile
+.profile-picture {
+    background-image: image-url("login-bg.jpg");
+    background-size: cover;
+    background-position: center center;
+    padding-top: 100px;
+    text-align: center;
+    position: relative;
+    margin-bottom: 200px;
+}
+.profile-picture-clip {
+    width: 100%;
+    height: 32px;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    background-position: center center;
+    background-size: 110%;
+    background-image: image-url("profile-clip.png");
+    
+}
+.profile-picture img{
+    position: relative;
+    z-index: 9;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border:3px solid #fff;
+    margin-bottom: -80px;
+}
+.profile-picture p{
+    position: relative;
+    top: 80px;
 }
