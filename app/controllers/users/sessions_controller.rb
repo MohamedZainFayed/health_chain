@@ -49,7 +49,7 @@ class Users::SessionsController < Devise::SessionsController
   def create_session(user)
     sign_in(user)
     session.delete(:temp_user_id)
-    respond_with user, location: after_sign_in_path_for(user)
+    redirect_to "/dashboard", notice: "Signed in successfully!"
   end
   # DELETE /resource/sign_out
   # def destroy
