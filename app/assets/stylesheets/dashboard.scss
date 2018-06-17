@@ -1,3 +1,188 @@
 // Place all the styles related to the dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#dashboard{
+    display: inline-block;
+    width: 100%;
+    padding-left: 350px;
+    min-height: 100vh;
+    // min-width: 1200px;
+    background: #fcfcfc;
+}
+.side-menu{
+    background-image: image-url("login-bg.jpg");
+    background-position: center center;
+    background-size: cover;
+    min-height: 100vh;
+    position: fixed;
+    top:0;
+    left:0;
+    width:350px;
+    z-index: 9;
+}
+.profile-image-x{
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile-image-x img{
+    width: 90px;
+    height: 90px;
+    margin-right: 10px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+.profile-image-x .email{
+    opacity: 0.7;
+    // font-weight: lighter;
+}
+.profile-image-x a, .full-details{
+    background: rgba(255,255,255,0.2);
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    display: inline-block;
+    font-size: 14px;
+}
+.patient-info{
+    padding: 0 20px;
+}
+.patient-info p {
+    // padding-top: 15px;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.8);
+    font-size: 14px;
+}
+.patient-info strong{
+    color: #fff;
+    margin-right: 30px;
+    min-width: 200px;
+}
+.patient-info-title {
+    background: rgba(255,255,255,0.3);
+    text-align: center;
+    padding: 10px 15px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    font-weight: lighter;
+}
+.full-details {
+
+}
+.content {
+    padding: 20px 30px;;
+}
+.dash-nav {
+    display: flex;
+    width: 100%;
+    padding: 5px 10px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1cee8c+0,1a92e9+100 */
+    background: rgb(28,238,140); /* Old browsers */
+    background: -moz-linear-gradient(left, rgba(28,238,140,1) 0%, rgba(26,146,233,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, rgba(28,238,140,1) 0%,rgba(26,146,233,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(28,238,140,1) 0%,rgba(26,146,233,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1cee8c', endColorstr='#1a92e9',GradientType=1 ); /* IE6-9 */
+}
+.dash-nav a {
+    margin: 0 10px;
+    width: 160px;
+    position: relative;
+    text-align: center;
+}
+.dash-nav a.active::before{
+    content: '\f3aa';
+    font-family: Material-Design-Iconic-Font;
+    color: #1bc4b7;
+    font-size: 25px;
+    width: 28px;
+    text-align: center;
+    position: absolute;
+    left: calc( 80px - 14px);
+    bottom: -30px;
+    transform: rotate(90deg)
+}
+.dash-title {
+    color: #1bc4b7;
+    letter-spacing: 1px;
+    // font-weight: 400;
+}
+.dash-section{
+    padding-top: 100px;
+}
+.dash-section{
+    display: none;
+}
+.dash-section.active{
+    display: block;
+}
+.visits{
+    display: inline-block;
+    width: 100%;
+    border-right: 1px solid #1bc4b7;
+    padding-right: 200px;
+}
+.single-visit {
+    display: inline-block;
+    width: 100%;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05), 0 2px 10px 0 rgba(0, 0, 0, 0.05) !important;
+    padding: 20px 25px;
+    margin-top: 30px;
+    position: relative;
+    padding-left: 180px;
+    // overflow: hidden;
+}
+.single-visit img{
+    height: 100%;
+    width: 160px;
+    position: absolute;
+    border-radius: 20px 0px 0px 20px;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+}
+.visit-date {
+    position: absolute;
+    right: -210px;
+    top: 20px;
+    font-size: 18px;
+    color: #1bc4b7;
+}
+.visit-date i{
+    margin-left: 20px;
+    border: 2px solid #fcfcfc;
+    border-radius: 50%;
+}
+.single-visit .visit-info{
+    display: flex;
+}
+.single-visit .visit-info p{
+    font-size: 14px;
+    color: #333;
+    flex: 1;
+}
+.single-visit strong{
+    color: #1bc4b7;
+}
+.single-visit .visit-details{
+    margin-top: 10px;
+    color: #666;
+    font-weight: 400;
+}
+.visit-avatar {
+    width: 100px;
+    height: 100%;
+}
+.visit-avatar ,.visit-txt{
+    float: left;
+}
+.visit-txt{
+    width:  calc(100% - 100px);
+}
