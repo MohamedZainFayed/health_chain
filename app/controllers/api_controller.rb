@@ -14,4 +14,11 @@ class ApiController < ApplicationController
         render json: {notice: "User exists"}
     end
 
+    def email_activated
+        @user = User.where(email: params[:email]).first
+        render json: {notice: "User doesn't exist"} and return if @user.nil?
+        render json: {notice: "Confirmed"} and return unless @user.confirmed_at.nil?
+        render json: {notice: "Not confirmed"}
+    end
+
 end
