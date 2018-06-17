@@ -23,5 +23,6 @@ Rails.application.routes.draw do
 
   root to: 'welcome#index'
   get "/dashboard" => "dashboard#index"
+  post "/user_auth" => "api#user_auth"
   
 end

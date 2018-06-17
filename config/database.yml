@@ -14,8 +14,8 @@ development: &default
   encoding: utf8
   database: health_chain_development
   pool: 10
-  username: sale
-  password: 123456
+  username: root
+  password: 12345
 
 development:
   <<: *default

@@ -8491,3 +8491,1968 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 292ms (Views: 292.1ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-06-17 01:10:12 +0200
+  
+Mysql2::Error (Access denied for user 'sale'@'localhost' (using password: YES)):
+  
+mysql2 (0.4.10) lib/mysql2/client.rb:89:in `connect'
+mysql2 (0.4.10) lib/mysql2/client.rb:89:in `initialize'
+activerecord (5.1.6) lib/active_record/connection_adapters/mysql2_adapter.rb:21:in `new'
+activerecord (5.1.6) lib/active_record/connection_adapters/mysql2_adapter.rb:21:in `mysql2_connection'
+activerecord (5.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:759:in `new_connection'
+activerecord (5.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:803:in `checkout_new_connection'
+activerecord (5.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:782:in `try_to_checkout_new_connection'
+activerecord (5.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:743:in `acquire_connection'
+activerecord (5.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:500:in `checkout'
+activerecord (5.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:374:in `connection'
+activerecord (5.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `retrieve_connection'
+activerecord (5.1.6) lib/active_record/connection_handling.rb:116:in `retrieve_connection'
+activerecord (5.1.6) lib/active_record/connection_handling.rb:88:in `connection'
+activerecord (5.1.6) lib/active_record/migration.rb:562:in `connection'
+activerecord (5.1.6) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `users` CASCADE[0m
+  [1m[35m (394.3ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `confirmation_token` varchar(255), `confirmed_at` datetime, `confirmation_sent_at` datetime, `unconfirmed_email` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `encrypted_otp_secret` varchar(255), `encrypted_otp_secret_iv` varchar(255), `encrypted_otp_secret_salt` varchar(255), `consumed_timestep` int, `otp_required_for_login` tinyint(1), `unconfirmed_otp_secret` varchar(255), `tfa_cipher` varchar(255), UNIQUE INDEX `index_users_on_email`  (`email`), UNIQUE INDEX `index_users_on_reset_password_token`  (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (324.8ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (38.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20180519195122)[0m
+  [1m[35m (44.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20180517154402),
+(20180519121548);
+
+[0m
+  [1m[35m (316.3ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2018-06-16 23:11:25', '2018-06-16 23:11:25')[0m
+  [1m[35m (31.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS `users` CASCADE[0m
+  [1m[35m (334.8ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `confirmation_token` varchar(255), `confirmed_at` datetime, `confirmation_sent_at` datetime, `unconfirmed_email` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `encrypted_otp_secret` varchar(255), `encrypted_otp_secret_iv` varchar(255), `encrypted_otp_secret_salt` varchar(255), `consumed_timestep` int, `otp_required_for_login` tinyint(1), `unconfirmed_otp_secret` varchar(255), `tfa_cipher` varchar(255), UNIQUE INDEX `index_users_on_email`  (`email`), UNIQUE INDEX `index_users_on_reset_password_token`  (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (289.7ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (38.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20180519195122)[0m
+  [1m[35m (43.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20180517154402),
+(20180519121548);
+
+[0m
+  [1m[35m (347.1ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2018-06-16 23:11:26', '2018-06-16 23:11:26')[0m
+  [1m[35m (34.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (22.2ms)[0m  [1m[33mUPDATE `ar_internal_metadata` SET `value` = 'test' WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (33.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 127.0.0.1 at 2018-06-17 01:11:42 +0200
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (7648.4ms)
+Completed 200 OK in 7752ms (Views: 7720.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-06-17 01:11:56 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 86ms (Views: 84.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-17 01:12:16 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PchuaWM7lZlRN5k4tJ/2iwEBNHECI+CFmjAouUqwMdEzDsUko4PfTQjEP8h4DD+RUnWPReqcMObgvgZ+AvshPw==", "user"=>{"email"=>"zain@zain.zain", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zain@zain.zain' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `created_at`, `updated_at`) VALUES ('zain@zain.zain', '$2a$11$aDHwljArt.23jkxnVksiMOMDHNgJLTLnrOdNe5XSZXtQowjIcIBkW', '6K-iisPCYkCCUofxizsV', '2018-06-16 23:12:16', '2018-06-16 23:12:16', '2018-06-16 23:12:16')[0m
+DEPRECATION WARNING: The behavior of `attribute_changed?` inside of after callbacks will be changing in the next version of Rails. The new return value will reflect the behavior of calling the method after `save` returned (e.g. the opposite of what it returns now). To maintain the current behavior, use `saved_change_to_attribute?` instead. (called from activate_otp at /media/zain/New Volume/RAILS/health_chain/app/models/user.rb:15)
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE `users` SET `encrypted_otp_secret` = 'rho5AybPbYQogtX7SdtZwyBExRg47hpePD1Du1j1RYglJdaIuSS/eg==\n', `encrypted_otp_secret_iv` = 'fZDIkYZpUDh0w8kM\n', `encrypted_otp_secret_salt` = '_BwUiE3GzbcEKXb5xhYojPw==\n', `tfa_cipher` = '3ydxmufszjymajkmvmpedgxf' WHERE `users`.`id` = 1[0m
+  [1m[35m (34.6ms)[0m  [1m[35mCOMMIT[0m
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (1.0ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 376.0ms
+Sent mail to zain@zain.zain (28.2ms)
+Date: Sun, 17 Jun 2018 01:12:17 +0200
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: zain@zain.zain
+Message-ID: <5b25995136e2c_ed52acd4a8adc88308be@zain-Inspiron-N5110.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome zain@zain.zain!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=6K-iisPCYkCCUofxizsV">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 1128ms (ActiveRecord: 36.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-17 01:12:17 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 65ms (Views: 63.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation?confirmation_token=6K-iisPCYkCCUofxizsV" for 127.0.0.1 at 2018-06-17 01:12:24 +0200
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"6K-iisPCYkCCUofxizsV"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`confirmation_token` = '6K-iisPCYkCCUofxizsV' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE `users` SET `confirmed_at` = '2018-06-16 23:12:24', `updated_at` = '2018-06-16 23:12:24' WHERE `users`.`id` = 1[0m
+  [1m[35m (96.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 121ms (ActiveRecord: 97.3ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-06-17 01:12:24 +0200
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 73ms (Views: 71.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-06-17 01:12:32 +0200
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oh00W797oNaKCFN8WM3pu8LgWsy/VyybN0E+zwfg9L0ZRc5J0sQeHkW0QgWCLqXkCt/WQ8kU3Y4MJy5kFejW8w==", "user"=>{"email"=>"zain@zain.zain", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'zain@zain.zain' LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE `users` SET `current_sign_in_at` = '2018-06-16 23:12:32', `last_sign_in_at` = '2018-06-16 23:12:32', `current_sign_in_ip` = '127.0.0.1', `last_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2018-06-16 23:12:32' WHERE `users`.`id` = 1[0m
+  [1m[35m (36.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 249ms (ActiveRecord: 38.5ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-17 01:12:32 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 99ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `json_response' for #<DashboardController:0x007f8c9092b7c8>):
+  
+app/controllers/dashboard_controller.rb:4:in `index'
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-17 01:15:00 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+Completed 406 Not Acceptable in 47ms (Views: 0.5ms | ActiveRecord: 1.2ms)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/dashboard_controller.rb:4:in `index'
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-17 01:15:02 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+Completed 406 Not Acceptable in 11ms (Views: 0.6ms | ActiveRecord: 1.0ms)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/dashboard_controller.rb:4:in `index'
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-17 01:15:40 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+Completed 200 OK in 47ms (Views: 0.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-17 01:32:58 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 115ms (Views: 71.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-06-17 01:33:09 +0200
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tGoDJsWZWQaULx9Ynys9kpFuMiTqDEf4WH+ZbCVsadS606OhN8OUSJi4uGwV0f/cgRdKircPCWcaKWUkh8IIWA==", "user"=>{"email"=>"zain@zain.zain", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'zain@zain.zain' LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE `users` SET `current_sign_in_at` = '2018-06-16 23:33:09', `sign_in_count` = 2, `updated_at` = '2018-06-16 23:33:09' WHERE `users`.`id` = 1[0m
+  [1m[35m (32.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 208ms (ActiveRecord: 34.4ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-17 01:33:09 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-17 02:04:55 +0200
+  [1m[35m (59.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (13.8ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+Completed 200 OK in 71ms (Views: 0.5ms | ActiveRecord: 15.2ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-17 02:06:26 +0200
+Processing by DashboardController#index as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-17 02:06:42 +0200
+Processing by DashboardController#index as */*
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 1015ms (Views: 983.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-17 02:08:27 +0200
+Processing by DashboardController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+Security warning: an embedded <script> tag on another site requested protected JavaScript. If you know what you're doing, go ahead and disable forgery protection on this action to permit cross-origin JavaScript embedding.
+Completed 422 Unprocessable Entity in 53ms (Views: 0.4ms | ActiveRecord: 0.8ms)
+
+
+  
+ActionController::InvalidCrossOriginRequest (Security warning: an embedded <script> tag on another site requested protected JavaScript. If you know what you're doing, go ahead and disable forgery protection on this action to permit cross-origin JavaScript embedding.):
+  
+actionpack (5.1.6) lib/action_controller/metal/request_forgery_protection.rb:245:in `verify_same_origin_request'
+activesupport (5.1.6) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.6) lib/active_support/callbacks.rb:246:in `block in halting'
+activesupport (5.1.6) lib/active_support/callbacks.rb:511:in `block in invoke_after'
+activesupport (5.1.6) lib/active_support/callbacks.rb:511:in `each'
+activesupport (5.1.6) lib/active_support/callbacks.rb:511:in `invoke_after'
+activesupport (5.1.6) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.6) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-17 02:08:45 +0200
+Processing by DashboardController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+Security warning: an embedded <script> tag on another site requested protected JavaScript. If you know what you're doing, go ahead and disable forgery protection on this action to permit cross-origin JavaScript embedding.
+Completed 422 Unprocessable Entity in 67ms (Views: 0.9ms | ActiveRecord: 0.7ms)
+
+
+  
+ActionController::InvalidCrossOriginRequest (Security warning: an embedded <script> tag on another site requested protected JavaScript. If you know what you're doing, go ahead and disable forgery protection on this action to permit cross-origin JavaScript embedding.):
+  
+actionpack (5.1.6) lib/action_controller/metal/request_forgery_protection.rb:245:in `verify_same_origin_request'
+activesupport (5.1.6) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.6) lib/active_support/callbacks.rb:246:in `block in halting'
+activesupport (5.1.6) lib/active_support/callbacks.rb:511:in `block in invoke_after'
+activesupport (5.1.6) lib/active_support/callbacks.rb:511:in `each'
+activesupport (5.1.6) lib/active_support/callbacks.rb:511:in `invoke_after'
+activesupport (5.1.6) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.6) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-17 02:08:53 +0200
+Processing by DashboardController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+Completed 200 OK in 36ms (Views: 0.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/user_auth" for 127.0.0.1 at 2018-06-17 02:31:41 +0200
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/user_auth"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/user_auth" for 127.0.0.1 at 2018-06-17 02:32:03 +0200
+Processing by ApiController#user_auth as */*
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.1.6) lib/action_controller/metal/request_forgery_protection.rb:195:in `handle_unverified_request'
+actionpack (5.1.6) lib/action_controller/metal/request_forgery_protection.rb:227:in `handle_unverified_request'
+devise (4.4.3) lib/devise/controllers/helpers.rb:255:in `handle_unverified_request'
+actionpack (5.1.6) lib/action_controller/metal/request_forgery_protection.rb:222:in `verify_authenticity_token'
+activesupport (5.1.6) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.6) lib/active_support/callbacks.rb:197:in `block (2 levels) in halting'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.1.6) lib/active_support/callbacks.rb:198:in `block in halting'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `each'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `invoke_before'
+activesupport (5.1.6) lib/active_support/callbacks.rb:130:in `run_callbacks'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.6) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/user_auth" for 127.0.0.1 at 2018-06-17 02:32:29 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/user_auth"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started PUT "/user_auth" for 127.0.0.1 at 2018-06-17 02:32:38 +0200
+  
+ActionController::RoutingError (No route matches [PUT] "/user_auth"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/user_auth" for 127.0.0.1 at 2018-06-17 02:32:45 +0200
+Processing by ApiController#user_auth as */*
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.1.6) lib/action_controller/metal/request_forgery_protection.rb:195:in `handle_unverified_request'
+actionpack (5.1.6) lib/action_controller/metal/request_forgery_protection.rb:227:in `handle_unverified_request'
+devise (4.4.3) lib/devise/controllers/helpers.rb:255:in `handle_unverified_request'
+actionpack (5.1.6) lib/action_controller/metal/request_forgery_protection.rb:222:in `verify_authenticity_token'
+activesupport (5.1.6) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.6) lib/active_support/callbacks.rb:197:in `block (2 levels) in halting'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.1.6) lib/active_support/callbacks.rb:198:in `block in halting'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `each'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `invoke_before'
+activesupport (5.1.6) lib/active_support/callbacks.rb:130:in `run_callbacks'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.6) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/user_auth" for 127.0.0.1 at 2018-06-17 02:34:08 +0200
+Processing by ApiController#user_auth as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+Completed 200 OK in 84ms (Views: 1.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/user_auth" for 127.0.0.1 at 2018-06-17 02:34:14 +0200
+Processing by ApiController#user_auth as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/user_auth" for 127.0.0.1 at 2018-06-17 02:34:26 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/user_auth"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/rails/info/routes?path=user" for 127.0.0.1 at 2018-06-17 02:34:37 +0200
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"user"}
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes?path=user_" for 127.0.0.1 at 2018-06-17 02:34:37 +0200
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"user_"}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes?path=user_" for 127.0.0.1 at 2018-06-17 02:34:38 +0200
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"user_"}
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/info/routes?path=user_auth" for 127.0.0.1 at 2018-06-17 02:34:39 +0200
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"user_auth"}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_auth" for 127.0.0.1 at 2018-06-17 02:36:12 +0200
+Processing by ApiController#user_auth as */*
+  Parameters: {"param1"=>"value1", "param2"=>"value2"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.1.6) lib/action_controller/metal/request_forgery_protection.rb:195:in `handle_unverified_request'
+actionpack (5.1.6) lib/action_controller/metal/request_forgery_protection.rb:227:in `handle_unverified_request'
+devise (4.4.3) lib/devise/controllers/helpers.rb:255:in `handle_unverified_request'
+actionpack (5.1.6) lib/action_controller/metal/request_forgery_protection.rb:222:in `verify_authenticity_token'
+activesupport (5.1.6) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.6) lib/active_support/callbacks.rb:197:in `block (2 levels) in halting'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.1.6) lib/active_support/callbacks.rb:198:in `block in halting'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `each'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `invoke_before'
+activesupport (5.1.6) lib/active_support/callbacks.rb:130:in `run_callbacks'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.6) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/user_auth" for 127.0.0.1 at 2018-06-17 02:39:44 +0200
+  
+ActionController::RoutingError (undefined method `skip_before_filter' for ApiController:Class
+Did you mean?  skip_before_action):
+  
+app/controllers/api_controller.rb:2:in `<class:ApiController>'
+app/controllers/api_controller.rb:1:in `<top (required)>'
+Started POST "/user_auth" for 127.0.0.1 at 2018-06-17 02:39:49 +0200
+  
+ActionController::RoutingError (undefined method `skip_before_filter' for ApiController:Class
+Did you mean?  skip_before_action):
+  
+app/controllers/api_controller.rb:2:in `<class:ApiController>'
+app/controllers/api_controller.rb:1:in `<top (required)>'
+Started POST "/user_auth" for 127.0.0.1 at 2018-06-17 02:40:11 +0200
+  
+ActionController::RoutingError (undefined method `skip_before_filter' for ApiController:Class
+Did you mean?  skip_before_action):
+  
+app/controllers/api_controller.rb:2:in `<class:ApiController>'
+app/controllers/api_controller.rb:1:in `<top (required)>'
+Started POST "/user_auth" for 127.0.0.1 at 2018-06-17 02:41:49 +0200
+Processing by ApiController#user_auth as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+Completed 200 OK in 33ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/user_auth" for 127.0.0.1 at 2018-06-17 02:42:26 +0200
+Processing by ApiController#user_auth as */*
+  Parameters: {"email"=>"value1", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/user_auth" for 127.0.0.1 at 2018-06-17 02:43:32 +0200
+Processing by ApiController#user_auth as */*
+  Parameters: {"email"=>"value1", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+Completed 200 OK in 35ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/user_auth" for 127.0.0.1 at 2018-06-17 02:44:15 +0200
+Processing by ApiController#user_auth as */*
+  Parameters: {"email"=>"value1", "password"=>"[FILTERED]"}
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/user_auth" for 127.0.0.1 at 2018-06-17 02:45:29 +0200
+Processing by ApiController#user_auth as */*
+  Parameters: {"email"=>"value1", "password"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 145ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `email' for #<ApiController:0x007f86b0c58da0>):
+  
+app/controllers/api_controller.rb:6:in `user_auth'
+Started POST "/user_auth" for 127.0.0.1 at 2018-06-17 02:45:42 +0200
+Processing by ApiController#user_auth as */*
+  Parameters: {"email"=>"value1", "password"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 211ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `email' for #<ApiController:0x007f86ac2aa410>):
+  
+app/controllers/api_controller.rb:6:in `user_auth'
+Started POST "/user_auth" for 127.0.0.1 at 2018-06-17 02:45:46 +0200
+Processing by ApiController#user_auth as */*
+  Parameters: {"email"=>"value1", "password"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 148ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `email' for #<ApiController:0x007f86ac26f770>):
+  
+app/controllers/api_controller.rb:6:in `user_auth'
+Started POST "/user_auth" for 127.0.0.1 at 2018-06-17 02:46:03 +0200
+Processing by ApiController#user_auth as */*
+  Parameters: {"email"=>"value1", "password"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 167ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `email' for #<ApiController:0x007f86b0843670>):
+  
+app/controllers/api_controller.rb:6:in `user_auth'
+Started POST "/user_auth" for 127.0.0.1 at 2018-06-17 02:47:10 +0200
+Processing by ApiController#user_auth as */*
+  Parameters: {"email"=>"value1", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'value1' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/user_auth" for 127.0.0.1 at 2018-06-17 02:47:25 +0200
+Processing by ApiController#user_auth as */*
+  Parameters: {"email"=>"value1", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'value1' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 7ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api_controller.rb:8:in `user_auth'
+Started POST "/user_auth" for 127.0.0.1 at 2018-06-17 02:47:28 +0200
+Processing by ApiController#user_auth as */*
+  Parameters: {"email"=>"value1", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'value1' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/user_auth" for 127.0.0.1 at 2018-06-17 02:47:58 +0200
+Processing by ApiController#user_auth as */*
+  Parameters: {"email"=>"zain@zain.zain", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'zain@zain.zain' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 28ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/user_auth" for 127.0.0.1 at 2018-06-17 02:51:35 +0200
+Processing by ApiController#user_auth as */*
+  Parameters: {"email"=>"zain@zain.zain", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'zain@zain.zain' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 251ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/user_auth" for 127.0.0.1 at 2018-06-17 02:51:44 +0200
+Processing by ApiController#user_auth as */*
+  Parameters: {"email"=>"zain@zain.zain", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'zain@zain.zain' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 157ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/user_auth" for 127.0.0.1 at 2018-06-17 02:51:51 +0200
+Processing by ApiController#user_auth as */*
+  Parameters: {"email"=>"zain@zain.zain", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'zain@zain.zain' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 163ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-17 02:56:42 +0200
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Processing by WelcomeController#index as HTML
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-17 02:56:42 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2018-06-17 02:57:00 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/signup"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/sign_up" for 127.0.0.1 at 2018-06-17 02:57:09 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/sign_up"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-06-17 02:57:28 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 263ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-17 02:57:28 +0200
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Processing by WelcomeController#index as HTML
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-17 02:57:28 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/user_auth" for 127.0.0.1 at 2018-06-17 02:57:42 +0200
+Processing by ApiController#user_auth as */*
+  Parameters: {"email"=>"zain@zain.zain", "password"=>"[FILTERED]"}
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/user_auth" for 127.0.0.1 at 2018-06-17 02:58:38 +0200
+Processing by ApiController#user_auth as */*
+  Parameters: {"email"=>"zain@zain.zain", "password"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `before' for #<ApiController:0x007f86b0a1c708>):
+  
+activesupport (5.1.6) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.6) lib/active_support/callbacks.rb:177:in `block (2 levels) in halting_and_conditional'
+activesupport (5.1.6) lib/active_support/callbacks.rb:177:in `each'
+activesupport (5.1.6) lib/active_support/callbacks.rb:177:in `all?'
+activesupport (5.1.6) lib/active_support/callbacks.rb:177:in `block in halting_and_conditional'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `each'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `invoke_before'
+activesupport (5.1.6) lib/active_support/callbacks.rb:130:in `run_callbacks'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.6) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/user_auth" for 127.0.0.1 at 2018-06-17 02:58:49 +0200
+Processing by ApiController#user_auth as */*
+  Parameters: {"email"=>"zain@zain.zain", "password"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `api_controller?' for #<ApiController:0x007f86ac2e11b8>):
+  
+activesupport (5.1.6) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.6) lib/active_support/callbacks.rb:177:in `block (2 levels) in halting_and_conditional'
+activesupport (5.1.6) lib/active_support/callbacks.rb:177:in `each'
+activesupport (5.1.6) lib/active_support/callbacks.rb:177:in `all?'
+activesupport (5.1.6) lib/active_support/callbacks.rb:177:in `block in halting_and_conditional'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `each'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `invoke_before'
+activesupport (5.1.6) lib/active_support/callbacks.rb:130:in `run_callbacks'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.6) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/user_auth" for 127.0.0.1 at 2018-06-17 03:01:28 +0200
+Processing by ApiController#user_auth as */*
+  Parameters: {"email"=>"zain@zain.zain", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'zain@zain.zain' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 194ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/user_auth" for 127.0.0.1 at 2018-06-17 03:01:36 +0200
+Processing by ApiController#user_auth as */*
+  Parameters: {"email"=>"zain@zain.zain", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'zain@zain.zain' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 159ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/user_auth" for 127.0.0.1 at 2018-06-17 03:01:44 +0200
+Processing by ApiController#user_auth as */*
+  Parameters: {"email"=>"zain@zasin.zain", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'zain@zasin.zain' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/user_auth" for 127.0.0.1 at 2018-06-17 03:01:49 +0200
+Processing by ApiController#user_auth as */*
+  Parameters: {"email"=>"zain@zain.zain", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'zain@zain.zain' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 161ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-17 03:02:27 +0200
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Processing by WelcomeController#index as HTML
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-17 03:02:27 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+Completed 200 OK in 9ms (Views: 1.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/settings" for 127.0.0.1 at 2018-06-17 03:02:39 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/settings"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/user_auth" for 127.0.0.1 at 2018-06-17 03:04:48 +0200
+Processing by ApiController#user_auth as */*
+  Parameters: {"email"=>"zain@zain.zain", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'zain@zain.zain' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 160ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-17 03:04:59 +0200
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"zain@zain.zain", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.1.6) lib/action_controller/metal/request_forgery_protection.rb:195:in `handle_unverified_request'
+actionpack (5.1.6) lib/action_controller/metal/request_forgery_protection.rb:227:in `handle_unverified_request'
+devise (4.4.3) lib/devise/controllers/helpers.rb:255:in `handle_unverified_request'
+actionpack (5.1.6) lib/action_controller/metal/request_forgery_protection.rb:222:in `verify_authenticity_token'
+activesupport (5.1.6) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.6) lib/active_support/callbacks.rb:197:in `block (2 levels) in halting'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.1.6) lib/active_support/callbacks.rb:198:in `block in halting'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `each'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `invoke_before'
+activesupport (5.1.6) lib/active_support/callbacks.rb:130:in `run_callbacks'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.6) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
+actionpack (5.1.6) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` LIMIT 11[0m
+  [1m[35m (21.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `users`[0m
+Started POST "/users" for 127.0.0.1 at 2018-06-17 03:10:43 +0200
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"zain@zain.zain", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.1.6) lib/action_controller/metal/request_forgery_protection.rb:195:in `handle_unverified_request'
+actionpack (5.1.6) lib/action_controller/metal/request_forgery_protection.rb:227:in `handle_unverified_request'
+devise (4.4.3) lib/devise/controllers/helpers.rb:255:in `handle_unverified_request'
+actionpack (5.1.6) lib/action_controller/metal/request_forgery_protection.rb:222:in `verify_authenticity_token'
+activesupport (5.1.6) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.6) lib/active_support/callbacks.rb:197:in `block (2 levels) in halting'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.1.6) lib/active_support/callbacks.rb:198:in `block in halting'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `each'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `invoke_before'
+activesupport (5.1.6) lib/active_support/callbacks.rb:130:in `run_callbacks'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.6) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
+actionpack (5.1.6) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/users" for 127.0.0.1 at 2018-06-17 03:12:11 +0200
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"zain@zain.zain", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.1.6) lib/action_controller/metal/request_forgery_protection.rb:195:in `handle_unverified_request'
+actionpack (5.1.6) lib/action_controller/metal/request_forgery_protection.rb:227:in `handle_unverified_request'
+devise (4.4.3) lib/devise/controllers/helpers.rb:255:in `handle_unverified_request'
+actionpack (5.1.6) lib/action_controller/metal/request_forgery_protection.rb:222:in `verify_authenticity_token'
+activesupport (5.1.6) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.6) lib/active_support/callbacks.rb:197:in `block (2 levels) in halting'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.1.6) lib/active_support/callbacks.rb:198:in `block in halting'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `each'
+activesupport (5.1.6) lib/active_support/callbacks.rb:507:in `invoke_before'
+activesupport (5.1.6) lib/active_support/callbacks.rb:130:in `run_callbacks'
+actionpack (5.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.6) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.6) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.6) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.6) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.6) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.6) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.6) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/mapper.rb:16:in `block in <class:Constraints>'
+actionpack (5.1.6) lib/action_dispatch/routing/mapper.rb:46:in `serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.6) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.6) lib/action_dispatch/routing/route_set.rb:844:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.5) lib/rack/etag.rb:25:in `call'
+rack (2.0.5) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.5) lib/rack/head.rb:12:in `call'
+rack (2.0.5) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.5) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.6) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/new_user" for 127.0.0.1 at 2018-06-17 03:12:19 +0200
+Processing by ApiController#new_user as */*
+  Parameters: {"email"=>"zain@zain.zain", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+Completed 500 Internal Server Error in 241ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::MissingTemplate (Missing template api/new_user, application/new_user with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/media/zain/New Volume/RAILS/health_chain/app/views"
+  * "/home/zain/.rvm/gems/ruby-2.3.4/gems/devise-4.4.3/app/views"
+):
+  
+app/controllers/api_controller.rb:16:in `new_user'
+Started POST "/new_user" for 127.0.0.1 at 2018-06-17 03:12:44 +0200
+Processing by ApiController#new_user as */*
+  Parameters: {"email"=>"zain@zain.zain", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+Completed 200 OK in 184ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/new_user" for 127.0.0.1 at 2018-06-17 03:12:47 +0200
+Processing by ApiController#new_user as */*
+  Parameters: {"email"=>"zain@zain.zain", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+Completed 200 OK in 155ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/new_user" for 127.0.0.1 at 2018-06-17 03:12:56 +0200
+Processing by ApiController#new_user as */*
+  Parameters: {"email"=>"zain@zain.zain", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+Completed 200 OK in 183ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/new_user" for 127.0.0.1 at 2018-06-17 03:13:01 +0200
+Processing by ApiController#new_user as */*
+  Parameters: {"email"=>"zain@zain.zain", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+Completed 200 OK in 156ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/new_user" for 127.0.0.1 at 2018-06-17 03:13:16 +0200
+Processing by ApiController#new_user as */*
+  Parameters: {"email"=>"zain@zain.zain", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (11.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zain@zain.zain' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 231ms (ActiveRecord: 12.1ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Email has already been taken):
+  
+app/controllers/api_controller.rb:16:in `new_user'
+Started POST "/new_user" for 127.0.0.1 at 2018-06-17 03:13:25 +0200
+Processing by ApiController#new_user as */*
+  Parameters: {"email"=>"zain@zain.zain", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zain@zain.zain' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 187ms (ActiveRecord: 1.3ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Email has already been taken):
+  
+app/controllers/api_controller.rb:16:in `new_user'
+Started POST "/new_user" for 127.0.0.1 at 2018-06-17 03:14:16 +0200
+Processing by ApiController#new_user as */*
+  Parameters: {"email"=>"zain@zain.zain", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+Completed 401 Unauthorized in 201ms (ActiveRecord: 0.4ms)
+
+
+Started POST "/new_user" for 127.0.0.1 at 2018-06-17 03:14:22 +0200
+Processing by ApiController#new_user as */*
+  Parameters: {"email"=>"zain@zain.zain", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+Completed 401 Unauthorized in 159ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/new_user" for 127.0.0.1 at 2018-06-17 03:14:51 +0200
+Processing by ApiController#new_user as */*
+  Parameters: {"email"=>"zain@zain.zain", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zain@zain.zain' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 188ms (Views: 0.6ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/new_user" for 127.0.0.1 at 2018-06-17 03:14:54 +0200
+Processing by ApiController#new_user as */*
+  Parameters: {"email"=>"zain@zain.zain", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zain@zain.zain' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 163ms (Views: 0.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/new_user" for 127.0.0.1 at 2018-06-17 03:15:00 +0200
+Processing by ApiController#new_user as */*
+  Parameters: {"email"=>"zain@zain.zain", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zain@zain.zain' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 200 OK in 161ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-17 03:23:48 +0200
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"zain@zain.zain", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (3705.1ms)
+Completed 200 OK in 3922ms (Views: 3858.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-17 03:24:23 +0200
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"email"=>"zain@zain.zain", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 123ms (Views: 106.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/new_user" for 127.0.0.1 at 2018-06-17 03:25:47 +0200
+Processing by ApiController#new_user as */*
+  Parameters: {"email"=>"zain@zain.zain", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}
+Completed 200 OK in 183ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-17 03:28:53 +0200
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"user"=>{"email"=>"zain@zain.zain", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zain@zain.zain' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 255ms (Views: 62.7ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-06-17 03:29:08 +0200
+Processing by Devise::RegistrationsController#create as */*
+  Parameters: {"user"=>{"email"=>"zaain@zain.zain", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'zaain@zain.zain' LIMIT 1[0m
+  [1m[35mSQL (35.3ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `confirmation_token`, `confirmation_sent_at`, `created_at`, `updated_at`) VALUES ('zaain@zain.zain', '$2a$11$TkN3/p63TjBuBZY6LkUp4egdIls1keh8tcOC3b9bMchqJcnRjtv9y', 'Gw655YxfyybFWbjneswC', '2018-06-17 01:29:08', '2018-06-17 01:29:08', '2018-06-17 01:29:08')[0m
+DEPRECATION WARNING: The behavior of `attribute_changed?` inside of after callbacks will be changing in the next version of Rails. The new return value will reflect the behavior of calling the method after `save` returned (e.g. the opposite of what it returns now). To maintain the current behavior, use `saved_change_to_attribute?` instead. (called from activate_otp at /media/zain/New Volume/RAILS/health_chain/app/models/user.rb:15)
+  [1m[35mSQL (5.2ms)[0m  [1m[33mUPDATE `users` SET `encrypted_otp_secret` = '0TMFUXSHWuu3qaSE3FWKLj2zXzRyZOmO9AxGFYq7lHkpdwizY1flVg==\n', `encrypted_otp_secret_iv` = '6RJdZrwqU9ajol4/\n', `encrypted_otp_secret_salt` = '_8IuMxxzkXBr0XqbTliIF6w==\n', `tfa_cipher` = 'isit7xfot4w3edi4xen6a4vx' WHERE `users`.`id` = 2[0m
+  [1m[35m (81.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering devise/mailer/confirmation_instructions.html.erb
+  Rendered devise/mailer/confirmation_instructions.html.erb (0.8ms)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 346.3ms
+Sent mail to zaain@zain.zain (24.3ms)
+Date: Sun, 17 Jun 2018 03:29:09 +0200
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: zaain@zain.zain
+Message-ID: <5b25b965b3001_11182ab649ea753414052@zain-Inspiron-N5110.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome zaain@zain.zain!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=Gw655YxfyybFWbjneswC">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 1090ms (ActiveRecord: 122.0ms)
+
+
+Started POST "/user_auth" for 127.0.0.1 at 2018-06-17 03:29:48 +0200
+Processing by ApiController#user_auth as */*
+  Parameters: {"email"=>"zaain@zain.zain", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'zaain@zain.zain' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 161ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-17 13:48:26 +0200
+  [1m[35m (81.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (554.1ms)
+Completed 200 OK in 1128ms (Views: 1088.1ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2018-06-17 13:48:38 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 153ms (Views: 150.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-06-17 13:48:40 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-06-17 13:48:56 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 98ms (Views: 96.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2018-06-17 13:49:00 +0200
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/passwords/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 135ms (Views: 107.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/password" for 127.0.0.1 at 2018-06-17 13:49:34 +0200
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"poe4hBSCkxQkjRZvjxmJk5dovxgC02228nx4MDkrMqhYssVfLWzNbe1/sWMDwj4mrLYd6k2uT6jx7ZvzSXE3aQ==", "user"=>{"email"=>"zain@zain.zain"}, "commit"=>"Send Reset Instructions"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'zain@zain.zain' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`reset_password_token` = '25912a8021e670a0d79f295f199a2079c85226c924d2343787aac71e7ce9a6b1' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (32.8ms)[0m  [1m[33mUPDATE `users` SET `reset_password_token` = '25912a8021e670a0d79f295f199a2079c85226c924d2343787aac71e7ce9a6b1', `reset_password_sent_at` = '2018-06-17 11:49:34', `updated_at` = '2018-06-17 11:49:34' WHERE `users`.`id` = 1[0m
+  [1m[35m (29.8ms)[0m  [1m[35mCOMMIT[0m
+  Rendering devise/mailer/reset_password_instructions.html.erb
+  Rendered devise/mailer/reset_password_instructions.html.erb (1.4ms)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 513.9ms
+Sent mail to zain@zain.zain (23.0ms)
+Date: Sun, 17 Jun 2018 13:49:35 +0200
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: zain@zain.zain
+Message-ID: <5b264acf62c9f_13af2b1308510554432e8@zain-Inspiron-N5110.mail>
+Subject: Reset password instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Hello zain@zain.zain!</p>
+
+<p>Someone has requested a link to change your password. You can do this through the link below.</p>
+
+<p><a href="http://localhost:3000/users/password/edit?reset_password_token=_4rZF9yL9Sa1cDnHuks8">Change my password</a></p>
+
+<p>If you didn't request this, please ignore this email.</p>
+<p>Your password won't change until you access the link above and create a new one.</p>
+
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 1366ms (ActiveRecord: 63.7ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-06-17 13:49:35 +0200
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 77ms (Views: 75.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/password" for 127.0.0.1 at 2018-06-17 13:51:21 +0200
+Processing by Devise::PasswordsController#create as */*
+  Parameters: {"user"=>{"email"=>"zaain@zain.zain"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'zaain@zain.zain' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`reset_password_token` = 'dc5d9738eaf91dc86e18d1de36cd16d972f05cab5c76ba0ddcdd81c4b2d3b57d' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE `users` SET `reset_password_token` = 'dc5d9738eaf91dc86e18d1de36cd16d972f05cab5c76ba0ddcdd81c4b2d3b57d', `reset_password_sent_at` = '2018-06-17 11:51:21', `updated_at` = '2018-06-17 11:51:21' WHERE `users`.`id` = 2[0m
+  [1m[35m (67.7ms)[0m  [1m[35mCOMMIT[0m
+  Rendering devise/mailer/reset_password_instructions.html.erb
+  Rendered devise/mailer/reset_password_instructions.html.erb (0.8ms)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 44.4ms
+Sent mail to zaain@zain.zain (2.0ms)
+Date: Sun, 17 Jun 2018 13:51:21 +0200
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: zaain@zain.zain
+Message-ID: <5b264b3961b57_13af2b13085104784336@zain-Inspiron-N5110.mail>
+Subject: Reset password instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Hello zaain@zain.zain!</p>
+
+<p>Someone has requested a link to change your password. You can do this through the link below.</p>
+
+<p><a href="http://localhost:3000/users/password/edit?reset_password_token=zwzshJD21_ajWsMdsGy9">Change my password</a></p>
+
+<p>If you didn't request this, please ignore this email.</p>
+<p>Your password won't change until you access the link above and create a new one.</p>
+
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 165ms (ActiveRecord: 69.4ms)
+
+
+Started POST "/users/password" for 127.0.0.1 at 2018-06-17 13:55:03 +0200
+Processing by Devise::PasswordsController#create as */*
+  Parameters: {"user"=>{"email"=>"zaain@zain.zain"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'zaain@zain.zain' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`reset_password_token` = 'bdb02d1a865e97aa3454ddae76c147af84046a301afced22db8b50d1725e9666' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE `users` SET `reset_password_token` = 'bdb02d1a865e97aa3454ddae76c147af84046a301afced22db8b50d1725e9666', `reset_password_sent_at` = '2018-06-17 11:55:03', `updated_at` = '2018-06-17 11:55:03' WHERE `users`.`id` = 2[0m
+  [1m[35m (44.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering devise/mailer/reset_password_instructions.html.erb
+  Rendered devise/mailer/reset_password_instructions.html.erb (0.7ms)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 43.1ms
+Sent mail to zaain@zain.zain (2.3ms)
+Date: Sun, 17 Jun 2018 13:55:03 +0200
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: zaain@zain.zain
+Message-ID: <5b264c171eda0_13af2b13085102d443487@zain-Inspiron-N5110.mail>
+Subject: Reset password instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Hello zaain@zain.zain!</p>
+
+<p>Someone has requested a link to change your password. You can do this through the link below.</p>
+
+<p><a href="http://localhost:3000/users/password/edit?reset_password_token=vpZWoJz2ysHUnGSKHpq2">Change my password</a></p>
+
+<p>If you didn't request this, please ignore this email.</p>
+<p>Your password won't change until you access the link above and create a new one.</p>
+
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 110ms (ActiveRecord: 45.9ms)
+
+
+Started POST "/users/password" for 127.0.0.1 at 2018-06-17 13:55:03 +0200
+Processing by Devise::PasswordsController#create as */*
+  Parameters: {"user"=>{"email"=>"zaain@zain.zain"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'zaain@zain.zain' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`reset_password_token` = '76655e4a99b7800dcaa1d524dae888f2193982091ba0f30c12fe77169d3469df' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE `users` SET `reset_password_token` = '76655e4a99b7800dcaa1d524dae888f2193982091ba0f30c12fe77169d3469df' WHERE `users`.`id` = 2[0m
+  [1m[35m (65.6ms)[0m  [1m[35mCOMMIT[0m
+  Rendering devise/mailer/reset_password_instructions.html.erb
+  Rendered devise/mailer/reset_password_instructions.html.erb (0.7ms)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 42.0ms
+Sent mail to zaain@zain.zain (1.8ms)
+Date: Sun, 17 Jun 2018 13:55:04 +0200
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: zaain@zain.zain
+Message-ID: <5b264c18372b_13af2b13085106084355d@zain-Inspiron-N5110.mail>
+Subject: Reset password instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Hello zaain@zain.zain!</p>
+
+<p>Someone has requested a link to change your password. You can do this through the link below.</p>
+
+<p><a href="http://localhost:3000/users/password/edit?reset_password_token=xJy49SagcBuHyhDQg1Xg">Change my password</a></p>
+
+<p>If you didn't request this, please ignore this email.</p>
+<p>Your password won't change until you access the link above and create a new one.</p>
+
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 128ms (ActiveRecord: 67.1ms)
+
+
+Started POST "/users/password" for 127.0.0.1 at 2018-06-17 13:55:08 +0200
+Processing by Devise::PasswordsController#create as */*
+  Parameters: {"user"=>{"email"=>"zaain@aaazain.zain"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'zaain@aaazain.zain' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/passwords/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 81ms (Views: 65.8ms | ActiveRecord: 0.7ms)
+
+
