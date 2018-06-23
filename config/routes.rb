@@ -28,5 +28,6 @@ Rails.application.routes.draw do
   get "/new_doctor" => "dashboard#new_doctor"
   get "/new_patient" => "dashboard#new_patient"
   post "/dashboard/add_doctor" => "dashboard#create_doctor"
+  post "/dashboard/add_patient" => "dashboard#create_patient"
   
 end

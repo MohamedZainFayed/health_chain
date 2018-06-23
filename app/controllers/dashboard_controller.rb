@@ -8,6 +8,7 @@ class DashboardController < ApplicationController
     end
 
     def new_doctor
+        redirect_to "/", notice: "Access not granted!" unless current_user && current_user.admin?
         @doctor = User.new
     end
 
@@ -27,7 +28,6 @@ class DashboardController < ApplicationController
             "department": params[:user][:department]
           }
         chain_url = "http://ec2-18-216-204-179.us-east-2.compute.amazonaws.com:3000/api/doctor"
-        host_url = "http://health-chain.herokuapp.com/users"
         doctor = User.new({email: params[:user][:email], password: params[:user][:password], password_confirmation: params[:user][:password_confirmation]})
         if doctor.save
             RestClient.post(chain_url, p.to_json, {content_type: :json, accept: :json})
@@ -39,5 +39,31 @@ class DashboardController < ApplicationController
 
     def new_patient
         @patient = Patient.new
+    end
+
+    def create_patient
+        p = {
+            "patientID": params[:patient][:id],
+            "fName": params[:patient][:fname],
+            "lname": params[:patient][:lname],
+            "GenderType": params[:patient][:gender],
+            "Age": params[:patient][:age],
+            "email": "null",
+            "PhonNumber": params[:patient][:phone_number],
+            "address": {
+              "city": params[:patient][:city],
+              "street": params[:patient][:street]
+            },
+            "department": "null"
+          }
+        chain_url = "http://ec2-18-216-204-179.us-east-2.compute.amazonaws.com:3000/api/patient"
+        patient = Patient.new params.require(:patient).permit(:id, :fname, :lname, :age, :gender, :phone_number, :city, :street)
+        if Patient.where(id: params[:patient][:id]).empty && patient.save
+            puts p
+            RestClient.post(chain_url, p.to_json, {content_type: :json, accept: :json})
+            redirect_to "/dashboard", notice: "Patient added!"
+        else
+            redirect_to "/new_patient", alert: "Patient not added!"
+        end
     end
 end
