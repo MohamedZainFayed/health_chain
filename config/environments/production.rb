@@ -88,4 +88,16 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    :address              =>  'smtp.sendgrid.net',
+    :port                 =>  '587',
+    :authentication       =>  :plain,
+    :user_name            =>  'app99943965@heroku.com',
+    :password             =>  'wzbtswfd8008',
+    :domain               =>  'heroku.com',
+    :enable_starttls_auto  =>  true
+  }
+  config.action_mailer.default_url_options = { host: 'health-chain.herokuapp.com'}
 end

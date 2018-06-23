@@ -14,8 +14,15 @@ development: &default
   encoding: utf8
   database: health_chain_development
   pool: 10
-  username: sale
-  password: 123456
+  username: root
+  password: 12345
+
+production:
+      adapter: postgresql
+      database: my_database_production
+      pool: 5
+      timeout: 5000
+
 
 development:
   <<: *default
@@ -46,8 +53,3 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
-production:
-  <<: *default
-  database: health_chain_production
-  username: health_chain
-  password: <%= ENV['HEALTH_CHAIN_DATABASE_PASSWORD'] %>

@@ -23,4 +23,8 @@ class User < ApplicationRecord
     self.otp_secret = tfa_cipher
     save!
   end
+
+  def admin?
+    !Admin.where(user_id: self.id).empty?
+  end
 end

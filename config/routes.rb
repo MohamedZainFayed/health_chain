@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { sessions: 'users/sessions' }
+  devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations', confirmations: 'users/confirmations' }
 
   devise_scope :user do
     post "/users/sessions/verify_otp" => "users/sessions#verify_otp"
@@ -23,5 +23,9 @@ Rails.application.routes.draw do
 
   root to: 'welcome#index'
   get "/dashboard" => "dashboard#index"
+  post "/user_auth" => "api#user_auth"
+  post "/email_activated" => "api#email_activated"
+  get "/new_doctor" => "dashboard#new_doctor"
+  get "/new_patient" => "dashboard#new_patient"
   
 end
