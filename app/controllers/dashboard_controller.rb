@@ -28,7 +28,7 @@ class DashboardController < ApplicationController
             "department": params[:user][:department]
           }
         chain_url = "http://ec2-18-216-204-179.us-east-2.compute.amazonaws.com:3000/api/doctor"
-        doctor = User.new({email: params[:user][:email], password: params[:user][:password], password_confirmation: params[:user][:password_confirmation]})
+        doctor = User.new({email: params[:user][:email], password: params[:user][:password], password_confirmation: params[:user][:password_confirmation], national_id: params[:user][:national_id]})
         if doctor.save
             RestClient.post(chain_url, p.to_json, {content_type: :json, accept: :json})
             redirect_to "/dashboard", notice: "Doctor added!"

@@ -6,7 +6,7 @@
         <div class="profile-image-x">
             <%= image_tag("https://media.creativemornings.com/uploads/user/avatar/49419/Bechtel_Profile_Square.jpg", :alt => "Health Chain") %>
             <div class="profile-info">
-                <p><%= current_user.name rescue current_user.email%></p>
+                <p><%= current_user.name || current_user.email%></p>
                 <p class="email"><%= current_user.email %></p>
                 <%= link_to "Profile Settings", edit_user_registration_path %>
             </div>

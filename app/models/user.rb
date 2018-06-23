@@ -32,9 +32,11 @@ class User < ApplicationRecord
   require 'uri'
   require 'json'
   
-  def try_api
-    uri = URI('http://ec2-18-216-204-179.us-east-2.compute.amazonaws.com:3000/api/doctor')
-    Net::HTTP.get(uri)
+  def name
+    uri = URI("http://ec2-18-216-204-179.us-east-2.compute.amazonaws.com:3000/api/doctor/#{self.national_id}")
+    details = JSON.parse(Net::HTTP.get(uri))
+    return nil if details["doctorID"].nil?
+    return "#{details['fName']} #{details['lname']}"
   end
 
 end
