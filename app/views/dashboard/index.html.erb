@@ -1,5 +1,52 @@
-<%- if current_user.admin? %>
-    implement admin view here ya salem :v
+<%- if true %>
+    
+    <div class="page profile-settings">
+<div class="profile-picture">
+  <%= image_tag("http://kokannow.com/wp-content/uploads/2017/12/riktpde_malvan.jpg", :alt => "John Doe") %>
+  <p class="txt-lvl-3 heading-font txt-center"></p>
+  <div class="profile-picture-clip">
+    <%= image_tag("profile-clip.png", :alt => "John Doe") %>
+  </div>
+</div>
+<div class="container-sm">
+<h2 class="section-title m-t-5">Manage Docotrs
+    <div class="title-right">
+        <a href="#" class="add-doctor"><i class="zmdi zmdi-account-add"></i> Add Doctor</a>
+    </div>
+</h2>
+
+<div class="single-doctor inline-block">
+    <p>A Great Docotr Here...</p>
+    <div>
+    <button class="default-btn red-btn btn-right">Remove</button>
+    </div>
+</div>
+<div class="single-doctor inline-block">
+    <p>A Great Docotr Here...</p>
+    <div>
+    <button class="default-btn red-btn btn-right">Remove</button>
+    </div>
+</div>
+<div class="single-doctor inline-block">
+    <p>A Great Docotr Here...</p>
+    <div>
+    <button class="default-btn red-btn btn-right">Remove</button>
+    </div>
+</div>
+
+<div class="inline-block" style="padding-top: 100px;">
+  <br><br><br>
+</div>
+
+
+
+
+
+
+
+
+
+
 <%- else %>
     <div id="dashboard" class="dashboard page">
     <div class="side-menu white">

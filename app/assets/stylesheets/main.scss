@@ -71,7 +71,7 @@ body,h1,h2,h3,h4,h5,h6,p,input{ margin:0;letter-spacing: 0.5px; }
 }
 
 // default input
-input.default-input{
+input.default-input, .default-select-container select{
     width: 100%;
     border: 1px solid rgb(216, 216, 216);
     padding: 10px 20px;
@@ -80,7 +80,7 @@ input.default-input{
     outline: 0 !important;
     transition: 0.3s;
 }
-input.default-input:focus{
+input.default-input:focus, .default-select-container select:focus{
     border-color: $kinda-blue;
 }
 label.default-label{
@@ -146,4 +146,40 @@ button{
 }
 .profile-picture > img{
     object-fit: cover;
+}
+.single-doctor {
+    padding: 10px;
+    border: 1px solid #eee;
+    margin-bottom: 15px;
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+    min-height: 50px;
+    border-radius: 10px;
+}
+.single-doctor > * {
+    flex: 1;
+}
+.single-doctor button {
+    padding: 2px;
+    min-width: auto;
+    font-size: 12px;
+    text-transform: capitalize;
+    padding: 4px 10px;
+    margin-left: 100px;
+}
+.section-title{
+    display: inline-block;
+    width: 100%;
+}
+.add-doctor {
+    color: #1bb8c3 !important;
+    font-weight: bold;
+    font-size: 16px;
+    border: 0;
+    background: transparent;
+}
+.title-right{
+    text-align: right;
+    float: right;
 }
