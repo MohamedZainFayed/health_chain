@@ -12,17 +12,17 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field form-group">
-    <%= f.label :email, class:"default-label" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "flase", class: "default-input" %>
-  </div>
-
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
   <div class="field form-group">
-    <%= f.label :password , class:"default-label" %>
+    <%= f.label :current_password, class:"default-label" %> 
+    <%= f.password_field :current_password, autocomplete: "false" , class: "default-input" %>
+  </div>
+  
+  <div class="field form-group">
+    <%= f.label "New password" , class:"default-label" %>
     <%= f.password_field :password, autocomplete: "false", class: "default-input" %>
     <% if @minimum_password_length %>
     <% end %>
@@ -33,21 +33,8 @@
     <%= f.password_field :password_confirmation, autocomplete: "false" , class: "default-input" %>
   </div>
 
-  <div class="field form-group">
-    <%= f.label :current_password, class:"default-label" %> 
-    <%= f.password_field :current_password, autocomplete: "false" , class: "default-input" %>
-  </div>
-
-  <div class="actions form-group">
-    <%= f.submit "Update" ,class:"default-btn btn-right" %>
-  </div>
+  <%= f.submit "Update" ,class:"default-btn btn-right" %>
+  
 <% end %>
 
-
-<h2 class="section-title m-t-5"></h2>
-<div class="txt-center">
- <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete , class:"default-btn red-btn"%>
- </div>
-<div class="padding-footer"></div>
-</div>
-</div>
+<%= button_to "cancel", "/",class:"default-btn btn-right", method: :get %>

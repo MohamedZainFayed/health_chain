@@ -3,8 +3,8 @@
     <div class="profile-image-x">
         <%= image_tag("https://media.creativemornings.com/uploads/user/avatar/49419/Bechtel_Profile_Square.jpg", :alt => "Health Chain") %>
         <div class="profile-info">
-            <p>Abdulrahman Ali</p>
-            <p class="email">a.a2020@gmail.com</p>
+            <p><%= current_user.name rescue current_user.email%></p>
+            <p class="email"><%= current_user.email %></p>
             <%= link_to "Profile Settings", edit_user_registration_path %>
         </div>
     </div>
@@ -81,7 +81,7 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inci dunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit tion ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
                         </div>
                         <div class="visit-date">
-                            20 / 2 / 2018
+                            22 / 2 / 2018
                             <i class="zmdi zmdi-circle"></i>
                         </div>
                     </div>
