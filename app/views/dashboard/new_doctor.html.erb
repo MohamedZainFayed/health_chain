@@ -10,16 +10,56 @@
 <h2 class="section-title m-t-5">Add New Doctor</h2>
 
 <div class="">
-    <%= form_for(@doctor , url: "/users") do |f| %>
+    <%= form_for(@doctor , url: "/dashboard/add_doctor") do |f| %>
+        
+        <div class="field form-group">
+            <%= f.label :National_ID, class:"default-label" %>
+            <%= f.text_field :national_id, autofocus: true, autocomplete: "off", placeholder: "", class: "default-input", required: true %> 
+        </div>
+        
+        <div class="field form-group">
+            <%= f.label :first_name, class:"default-label" %>
+            <%= f.text_field :fname, autofocus: true, autocomplete: "off", placeholder: "", class: "default-input", required: true %> 
+        </div>
+        
+        <div class="field form-group">
+            <%= f.label :last_name, class:"default-label" %>
+            <%= f.text_field :lname, autofocus: true, autocomplete: "off", placeholder: "", class: "default-input", required: true %> 
+        </div>
+        
+        <div class="field form-group">
+            <%= f.label :phone_number, class:"default-label" %>
+            <%= f.text_field :phone_number, autofocus: true, autocomplete: "off", placeholder: "", class: "default-input", required: true %> 
+        </div>
         
         <div class="field form-group">
             <%= f.label :Email_Address, class:"default-label" %>
-            <%= f.email_field :email, autofocus: true, autocomplete: "off", placeholder: "", autocomplete: "off", class: "default-input" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "off", placeholder: "", class: "default-input", required: true %> 
+        </div>
+        
+        <div class="field form-group">
+            <%= f.label :department, class:"default-label" %>
+            <%= f.text_field :department, autofocus: true, autocomplete: "off", placeholder: "", autocomplete: "off", class: "default-input", required: true %> 
+        </div>
+        
+        <div class="field form-group">
+            <%= f.label :age, class:"default-label" %>
+            <%= f.number_field :age, autofocus: true, autocomplete: "off", placeholder: "", class: "default-input", required: true %> 
+        </div>
+        
+        <div class="field form-group">
+            <%= f.label :city, class:"default-label" %>
+            <%= f.text_field :city, autofocus: true, autocomplete: "off", placeholder: "", class: "default-input", required: true %> 
+        </div>
+        
+        <div class="field form-group">
+            <%= f.label :street, class:"default-label" %>
+            <%= f.text_field :street, autofocus: true, autocomplete: "off", placeholder: "", class: "default-input", required: true %> 
         </div>
 
         <div class="field form-group">
             <%= f.label :Password, class:"default-label" %>
-            <%= f.password_field :password, autocomplete: "off", placeholder: "", class: "default-input" %>
+            <%= f.password_field :password, autocomplete: "off", placeholder: "", class: "default-input", required: true %> 
         </div>
 
         <div class="field form-group">

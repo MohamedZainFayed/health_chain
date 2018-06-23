@@ -27,5 +27,6 @@ Rails.application.routes.draw do
   post "/email_activated" => "api#email_activated"
   get "/new_doctor" => "dashboard#new_doctor"
   get "/new_patient" => "dashboard#new_patient"
+  post "/dashboard/add_doctor" => "dashboard#create_doctor"
   
 end

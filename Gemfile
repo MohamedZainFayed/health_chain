@@ -23,6 +23,8 @@ gem 'devise'
 gem 'devise-two-factor'
 gem 'rqrcode_png'
 
+gem 'rest-client'
+
 #Materiallize 
 gem 'materialize-sass', '~> 1.0.0.rc1'
 

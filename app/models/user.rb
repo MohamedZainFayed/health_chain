@@ -27,4 +27,14 @@ class User < ApplicationRecord
   def admin?
     !Admin.where(user_id: self.id).empty?
   end
+
+  require 'net/http'
+  require 'uri'
+  require 'json'
+  
+  def try_api
+    uri = URI('http://ec2-18-216-204-179.us-east-2.compute.amazonaws.com:3000/api/doctor')
+    Net::HTTP.get(uri)
+  end
+
 end

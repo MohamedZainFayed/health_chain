@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180623144623) do
+ActiveRecord::Schema.define(version: 20180623192718) do
 
-  create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_admins_on_user_id"
   end
 
-  create_table "patients", id: :string, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "patients", id: :string, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -48,6 +48,14 @@ ActiveRecord::Schema.define(version: 20180623144623) do
     t.boolean "otp_required_for_login"
     t.string "unconfirmed_otp_secret"
     t.string "tfa_cipher"
+    t.string "national_id"
+    t.string "phone_number"
+    t.integer "age"
+    t.string "fname"
+    t.string "lname"
+    t.string "city"
+    t.string "street"
+    t.string "department"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
