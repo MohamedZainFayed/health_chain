@@ -1,23 +1,40 @@
-<div class="login-form">
+<div class="page profile-settings">
+<div class="profile-picture">
+  <%= image_tag("http://kokannow.com/wp-content/uploads/2017/12/riktpde_malvan.jpg", :alt => "John Doe") %>
+  <p class="txt-lvl-3 heading-font txt-center"></p>
+  <div class="profile-picture-clip">
+    <%= image_tag("profile-clip.png", :alt => "John Doe") %>
+  </div>
+</div>
+<div class="container-sm">
+<h2 class="section-title m-t-5">Add New Doctor</h2>
+
+<div class="">
     <%= form_for(@doctor , url: "/users") do |f| %>
         
-        <div class="field">
-            <i class="zmdi zmdi-email"></i>
-            <%= f.email_field :email, autofocus: true, autocomplete: "off", placeholder: "Email Address", autocomplete: "off" %>
+        <div class="field form-group">
+            <%= f.label :Email_Address, class:"default-label" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "off", placeholder: "", autocomplete: "off", class: "default-input" %>
         </div>
 
-        <div class="field">
-            <i class="zmdi zmdi-lock"></i>
-            <%= f.password_field :password, autocomplete: "off", placeholder: "Password" %>
+        <div class="field form-group">
+            <%= f.label :Password, class:"default-label" %>
+            <%= f.password_field :password, autocomplete: "off", placeholder: "", class: "default-input" %>
         </div>
 
-        <div class="field">
-            <i class="zmdi zmdi-lock"></i>
-            <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm Password" %>
+        <div class="field form-group">
+            <%= f.label :Confirm_Password, class:"default-label" %>
+            <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "" , class: "default-input"%>
         </div>
-        <p class="pd-t-2 kinda-white txt-lvl-2 txt-center txt-font">Password should be at least 6 character</p>
+        <p class="pd-t-2 kinda-white txt-lvl-2 txt-center txt-font" style="display:none">Password should be at least 6 character</p>
         <div class="actions">
-            <%= f.submit "Add doctor" %>
+            <%= f.submit "Add Doctor", class:"default-btn btn-right" %>
         </div>
     <% end %>
 </div>
+
+
+<div class="inline-block" style="padding-top: 100px;">
+  <br><br><br>
+</div>
+
