@@ -5,7 +5,38 @@ class DashboardController < ApplicationController
     require 'json'
 
     def index
+        @record = Record.new
         @users = User.all
+        @patient = Patient.new
+        uri = URI("http://ec2-18-216-204-179.us-east-2.compute.amazonaws.com:3000/api/record")
+        @records = []
+        if params[:id]
+            @records = JSON.parse(Net::HTTP.get(uri))
+            @records = @records.select{|r| r if r["owner"] == "resource:org.acme.medicalchain.patient##{params[:id]}"}
+        end
+        for i in 0..@records.length
+            @records[i]["doctor"] = User.where(national_id: @records[i]["writer"]["resource:org.acme.medicalchain.doctor#".length .. @records[i]["writer"].length]).first.name if @records[i]
+        end
+    end
+
+    def get_info
+        redirect_to "/dashboard?id=#{params[:patient]["id"]}"
+    end
+
+    def add_record
+        @record = Record.new params.require(:record).permit(:national_id, :diagnosist)
+        if @record.save
+            p = { "recordID": @record.id,
+                "diagnosist": @record.diagnosist,
+                "owner": "resource:org.acme.medicalchain.patient##{@record.national_id}",
+                "writer": "resource:org.acme.medicalchain.doctor##{current_user.national_id}"
+            }
+            chain_url = "http://ec2-18-216-204-179.us-east-2.compute.amazonaws.com:3000/api/record"
+            RestClient.post(chain_url, p.to_json, {content_type: :json, accept: :json})
+            redirect_to "/dashboard", notice: "Record saved!"
+        else
+            redirect_to "/dashboard", notice: "Record not saved!"
+        end
     end
 
     def new_doctor
@@ -67,7 +98,7 @@ class DashboardController < ApplicationController
           }
         chain_url = "http://ec2-18-216-204-179.us-east-2.compute.amazonaws.com:3000/api/patient"
         patient = Patient.new params.require(:patient).permit(:id, :fname, :lname, :age, :gender, :phone_number, :city, :street)
-        if Patient.where(id: params[:patient][:id]).empty && patient.save
+        if Patient.where(id: params[:patient][:id]).empty? && patient.save
             puts p
             RestClient.post(chain_url, p.to_json, {content_type: :json, accept: :json})
             redirect_to "/dashboard", notice: "Patient added!"

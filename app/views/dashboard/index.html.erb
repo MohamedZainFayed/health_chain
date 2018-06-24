@@ -45,12 +45,8 @@
         <div class="patient-info">
             <h2 class="txt-lvl-3 patient-info-title add-visit">Add Visit</h2>
             <p><strong>Last Visit: </strong>July 5, 2017</p>
-            <p><strong>Last Visit: </strong>July 5, 2017</p>
-            <p><strong>Last Visit: </strong>July 5, 2017</p>
-            <p><strong>Last Visit: </strong>July 5, 2017</p>
-            <p><strong>Last Visit: </strong>July 5, 2017</p>
             <div class="txt-center">
-                <a href="#" class="full-details m-t-3">Full Details</a>
+                <a href="/new_patient" class="full-details m-t-3">Add patient</a>
                 <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "full-details" %><br /><br />
             </div>
         </div>
@@ -59,7 +55,10 @@
         <div class="content">
         <div class="form-group m-t-5">
         <label class="default-label">Search for...</label>
-            <input type="text" style="background: transparent" class="default-input">
+        <%= form_for(@patient, url: "/dashboard/get_info") do |f| %>
+            <%= f.text_field :id, style: "background: transparent;", class:"default-input", required: true %>
+            <%= f.submit "Get data", class:"default-btn btn-right" %>
+        <% end %>
         </div>
             <div class="dash-nav white" style="display: none;">
                 <a href="#upcoming">Upcoming</a>
@@ -76,53 +75,18 @@
                 <div class="dash-section active" id="history">
                     <h2 class="txt-lvl-4 dash-title">Patient's History</h2>
                     <div class="visits">
-                        <div class="single-visit">
-                        <%= image_tag("https://dermamedical.co.uk/wp-content/uploads/2016/02/Juinior-doctor-.jpg", :alt => "Health Chain") %>
-                            <div class="visit-info">
-                                <p><strong>Name: </strong>Dr. Islam Reda</p>
-                                <p><strong>Type: </strong>Private Docotr</p>
-                            </div>
-                            <div class="visit-details">
-                            <p><strong>Visit Details:</strong></p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inci dunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit tion ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
-                            </div>
-                            <div class="visit-date">
-                                20 / 2 / 2018
-                                <i class="zmdi zmdi-circle"></i>
-                            </div>
-                        </div>
-                        <div class="single-visit">
-                        <%= image_tag("https://dermamedical.co.uk/wp-content/uploads/2016/02/Juinior-doctor-.jpg", :alt => "Health Chain") %>
-                            <div class="visit-info">
-                                <p><strong>Name: </strong>Dr. Islam Reda</p>
-                                <p><strong>Type: </strong>Private Docotr</p>
-                            </div>
-                            <div class="visit-details">
-                            <p><strong>Visit Details:</strong></p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inci dunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit tion ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
-                            </div>
-                            <div class="visit-date">
-                                20 / 2 / 2018
-                                <i class="zmdi zmdi-circle"></i>
-                            </div>
-                        </div>
-                        
-                        
-                        <div class="single-visit">
+                        <%- @records.each do |r| %>
+                            <div class="single-visit">
                             <%= image_tag("https://dermamedical.co.uk/wp-content/uploads/2016/02/Juinior-doctor-.jpg", :alt => "Health Chain") %>
-                            <div class="visit-info">
-                                <p><strong>Name: </strong>Dr. Islam Reda</p>
-                                <p><strong>Type: </strong>Private Docotr</p>
+                                <div class="visit-info">
+                                    <p><strong>Name: </strong><%= "Dr. #{r['doctor']}"%></p>
+                                </div>
+                                <div class="visit-details">
+                                <p><strong>Visit Details:</strong></p>
+                                <p><%= r["diagnosist"] %></p>
+                                </div>
                             </div>
-                            <div class="visit-details">
-                            <p><strong>Visit Details:</strong></p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor inci dunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit tion ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
-                            </div>
-                            <div class="visit-date">
-                                22 / 2 / 2018
-                                <i class="zmdi zmdi-circle"></i>
-                            </div>
-                        </div>
+                        <%- end %>
                     </div>
                 </div>
             </div>
@@ -159,26 +123,19 @@
 <div class="add-visit-container" style="display:none;">
     <div class="add-visit-modal">
         <h2 class="section-title m-t-5">Add New Visit</h2>
-        <div class="filed form-group">
-            <label class="default-label">Name</label>
-            <input class="default-input" type="text">
-        </div>
-        <div class="filed form-group">
-            <label class="default-label">Type</label>
-            <input class="default-input" type="text">
-        </div>
-        <div class="filed form-group">
-            <label class="default-label">Date</label>
-            <input class="default-input" type="date">
-        </div>
-        <div class="filed form-group">
-            <label class="default-label">Details</label>
-            <textarea class="default-input"></textarea>
-        </div>
-        <div class="filed form-group">
-            <button class="default-btn btn-right">Add</button>
-            <button class="default-btn btn-right btn-mr cancel-visit">Cancel</button>
-        </div>
+        <%= form_for(@record, url: "/dashboard/add_record") do |f| %>
+            <div class="filed form-group">
+                <label class="default-label">Patient national ID</label>
+                <%= f.text_field :national_id, class: "default-input"%>
+            </div>
+            <div class="filed form-group">
+                <label class="default-label">Details</label>
+                <%= f.text_field :diagnosist, class:"default-input" %>
+            </div>
+            <div class="filed form-group">
+                <%= f.submit "add", class:"default-btn btn-right" %>
+            </div>
+        <% end %>
     </div>  
 </div>
 <script>
