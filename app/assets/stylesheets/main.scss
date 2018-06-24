@@ -71,7 +71,7 @@ body,h1,h2,h3,h4,h5,h6,p,input{ margin:0;letter-spacing: 0.5px; }
 }
 
 // default input
-input.default-input, .default-select-container select{
+.default-input, .default-select-container select{
     width: 100%;
     border: 1px solid rgb(216, 216, 216);
     padding: 10px 20px;
@@ -79,11 +79,12 @@ input.default-input, .default-select-container select{
     font-size: 16px;
     outline: 0 !important;
     transition: 0.3s;
+    resize: none;
 }
-input.default-input:focus, .default-select-container select:focus{
+.default-input:focus, .default-select-container select:focus{
     border-color: $kinda-blue;
 }
-label.default-label{
+.default-label{
     font-size: 16px;
     display: inline-block;
     width: 100%;

@@ -9218,3 +9218,562 @@ Migrating to AddAttToPatients (20180623215435)
   [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('810524527022508375')[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/new_patient" for 127.0.0.1 at 2018-06-24 00:50:32 +0200
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by DashboardController#new_patient as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/new_patient.html.erb within layouts/application
+  Rendered dashboard/new_patient.html.erb within layouts/application (3007.1ms)
+Completed 200 OK in 3818ms (Views: 3641.9ms | ActiveRecord: 26.5ms)
+
+
+Started GET "/new_patient" for 127.0.0.1 at 2018-06-24 00:53:24 +0200
+Processing by DashboardController#new_patient as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/new_patient.html.erb within layouts/application
+  Rendered dashboard/new_patient.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 8393ms (Views: 8362.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/new_patient" for 127.0.0.1 at 2018-06-24 00:56:36 +0200
+Processing by DashboardController#new_patient as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/new_patient.html.erb within layouts/application
+  Rendered dashboard/new_patient.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 309ms (Views: 265.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-24 00:56:38 +0200
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Processing by WelcomeController#index as HTML
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 00:56:38 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 352ms (Views: 308.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:01:05 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 284ms (Views: 209.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:01:19 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 293ms (Views: 254.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:01:58 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 4398ms (Views: 4344.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:02:34 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 4711ms (Views: 4664.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:02:47 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 6021ms (Views: 5984.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:03:23 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 6548ms (Views: 6493.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:04:48 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 6561ms (Views: 6497.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:05:55 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 4357ms (Views: 4326.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:06:30 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 6091ms (Views: 6060.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:06:43 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 252ms (Views: 220.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:07:20 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 5487ms (Views: 5433.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:08:02 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 385ms (Views: 337.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:08:31 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 263ms (Views: 227.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:10:02 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 263ms (Views: 210.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:11:11 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 4664ms (Views: 4603.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:11:52 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 4313ms (Views: 4284.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:12:14 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 257ms (Views: 221.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:12:41 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 274ms (Views: 240.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:13:17 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 4370ms (Views: 4326.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:13:48 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 4267ms (Views: 4227.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:14:40 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 385ms (Views: 326.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:27:30 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (1088.9ms)
+Completed 500 Internal Server Error in 1375ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of String into Integer):
+    53:         <div class="profile-image-x">
+    54:             <%= image_tag("https://media.creativemornings.com/uploads/user/avatar/49419/Bechtel_Profile_Square.jpg", :alt => "Health Chain") %>
+    55:             <div class="profile-info">
+    56:                 <p><%= current_user.name || current_user.email%></p>
+    57:                 <p class="email"><%= current_user.email %></p>
+    58:                 <%= link_to "Profile Settings", edit_user_registration_path %>
+    59:             </div>
+  
+app/models/user.rb:38:in `[]'
+app/models/user.rb:38:in `name'
+app/views/dashboard/index.html.erb:56:in `_app_views_dashboard_index_html_erb__853393189_105665400'
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:28:17 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (868.6ms)
+Completed 500 Internal Server Error in 1038ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of String into Integer):
+    53:         <div class="profile-image-x">
+    54:             <%= image_tag("https://media.creativemornings.com/uploads/user/avatar/49419/Bechtel_Profile_Square.jpg", :alt => "Health Chain") %>
+    55:             <div class="profile-info">
+    56:                 <p><%= current_user.name || current_user.email%></p>
+    57:                 <p class="email"><%= current_user.email %></p>
+    58:                 <%= link_to "Profile Settings", edit_user_registration_path %>
+    59:             </div>
+  
+app/models/user.rb:38:in `[]'
+app/models/user.rb:38:in `name'
+app/views/dashboard/index.html.erb:56:in `_app_views_dashboard_index_html_erb__853393189_101974524'
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:29:00 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 432ms (Views: 358.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:29:45 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 270ms (Views: 217.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:29:48 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 312ms (Views: 277.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:30:17 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 231ms (Views: 199.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:31:18 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mAdmin Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM `admins` WHERE `admins`.`user_id` = 3 LIMIT 1[0m
+  Rendered dashboard/index.html.erb within layouts/application (3364.3ms)
+Completed 500 Internal Server Error in 3517ms (ActiveRecord: 20.0ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of String into Integer):
+    44:         <div class="profile-image-x">
+    45:             <%= image_tag("https://media.creativemornings.com/uploads/user/avatar/49419/Bechtel_Profile_Square.jpg", :alt => "Health Chain") %>
+    46:             <div class="profile-info">
+    47:                 <p><%= current_user.name || current_user.email%></p>
+    48:                 <p class="email"><%= current_user.email %></p>
+    49:                 <%= link_to "Profile Settings", edit_user_registration_path %>
+    50:             </div>
+  
+app/models/user.rb:38:in `[]'
+app/models/user.rb:38:in `name'
+app/views/dashboard/index.html.erb:47:in `_app_views_dashboard_index_html_erb__853393189_102926580'
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:31:54 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mAdmin Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `admins` WHERE `admins`.`user_id` = 3 LIMIT 1[0m
+  Rendered dashboard/index.html.erb within layouts/application (42.0ms)
+Completed 200 OK in 299ms (Views: 235.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:34:39 +0200
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mAdmin Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `admins` WHERE `admins`.`user_id` = 3 LIMIT 1[0m
+  Rendered dashboard/index.html.erb within layouts/application (991.7ms)
+Completed 500 Internal Server Error in 1298ms (ActiveRecord: 30.0ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of String into Integer):
+    44:         <div class="profile-image-x">
+    45:             <%= image_tag("https://media.creativemornings.com/uploads/user/avatar/49419/Bechtel_Profile_Square.jpg", :alt => "Health Chain") %>
+    46:             <div class="profile-info">
+    47:                 <p><%= current_user.name || current_user.email%></p>
+    48:                 <p class="email"><%= current_user.email %></p>
+    49:                 <%= link_to "Profile Settings", edit_user_registration_path %>
+    50:             </div>
+  
+app/models/user.rb:38:in `[]'
+app/models/user.rb:38:in `name'
+app/views/dashboard/index.html.erb:47:in `_app_views_dashboard_index_html_erb__933491841_46711104'
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:37:00 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  Rendered dashboard/index.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 148ms (ActiveRecord: 2.0ms)
+
+
+  
+SyntaxError (C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:48: syntax error, unexpected '<'
+                <p class="email">'.freeze;@out...
+                 ^
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:50: unknown regexp options - dv
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:51: syntax error, unexpected '<'
+        </div>
+         ^
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:53: unknown regexp option - h
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:53: syntax error, unexpected tINTEGER, expecting ')'
+...nt-info-title">Patient Info</h2>
+...                               ^
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:54: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+            <p><strong>Last Visit: </strong>July 5, 2017</p>
+                                  ^
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:54: unknown regexp option - p
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:55: syntax error, unexpected '<'
+            <p><strong>Last Visit: </strong>July 5, 2017</p>
+             ^
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:55: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+            <p><strong>Last Visit: </strong>July 5, 2017</p>
+                                  ^
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:55: unknown regexp option - p
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:56: syntax error, unexpected '<'
+            <p><strong>Last Visit: </strong>July 5, 2017</p>
+             ^
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:56: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+            <p><strong>Last Visit: </strong>July 5, 2017</p>
+                                  ^
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:56: unknown regexp option - p
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:57: syntax error, unexpected '<'
+            <p><strong>Last Visit: </strong>July 5, 2017</p>
+             ^
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:57: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+            <p><strong>Last Visit: </strong>July 5, 2017</p>
+                                  ^
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:57: unknown regexp option - p
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:58: syntax error, unexpected '<'
+            <p><strong>Last Visit: </strong>July 5, 2017</p>
+             ^
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:58: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+            <p><strong>Last Visit: </strong>July 5, 2017</p>
+                                  ^
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:58: unknown regexp option - p
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:59: syntax error, unexpected '<'
+            <div class="txt-center">
+             ^
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:60: syntax error, unexpected '<'
+                <a href="#" class="full-detail...
+                 ^
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:60: syntax error, unexpected keyword_class, expecting ')'
+...              <a href="#" class="full-details m-t-3">Full De...
+...                               ^
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:60: syntax error, unexpected tCONSTANT, expecting keyword_do or '{' or '('
+...ull-details m-t-3">Full Details</a>
+...                               ^
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:61: syntax error, unexpected '<'
+...put_buffer.safe_append='<br /><br />
+...                               ^
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:62: unknown regexp options - dv
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:63: syntax error, unexpected '<'
+        </div>
+         ^
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:65: unknown regexp options - dv
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:66: syntax error, unexpected '<'
+        <div class="content">
+         ^
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:67: syntax error, unexpected '<'
+            <div class="dash-nav white">
+             ^
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:68: syntax error, unexpected '<'
+                <a href="#upcoming">Upcoming</a>
+                 ^
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:69: unknown regexp option - a
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:70: syntax error, unexpected '<'
+                <a href="#audience">Audience</a>
+                 ^
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:71: unknown regexp options - dv
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:72: syntax error, unexpected '<'
+            <div class="dash-sections">
+             ^
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:73: syntax error, unexpected '<'
+            <div class="dash-section" id="upcoming">
+             ^
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:73: syntax error, unexpected tIDENTIFIER, expecting ')'
+            <div class="dash-section" id="upcoming">
+                                        ^
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:74: syntax error, unexpected '<'
+                    <h2 class="txt-lvl-4 dash-title">Upcoming</h2>
+                     ^
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:75: unknown regexp options - dv
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:76: syntax error, unexpected '<'
+                <div class="dash-section" id="audience">
+                 ^
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:76: syntax error, unexpected tIDENTIFIER, expecting ')'
+                <div class="dash-section" id="audience">
+                                            ^
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:77: syntax error, unexpected '<'
+                    <h2 class="txt-lvl-4 dash-title">Audience</h2>
+                     ^
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:78: unknown regexp options - dv
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:79: syntax error, unexpected '<'
+                <div class="dash-section active" id="history">
+                 ^
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:79: syntax error, unexpected tIDENTIFIER, expecting ')'
+                <div class="dash-section active" id="history">
+                                                   ^
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:80: syntax error, unexpected '<'
+                    <h2 class="txt-lvl-4 dash-titl...
+                     ^
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:80: syntax error, unexpected $undefined, expecting keyword_do or '{' or '('
+..."txt-lvl-4 dash-title">Patient\'s History</h2>
+...                               ^
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:162: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end ;
+             ^
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:164: syntax error, unexpected keyword_ensure, expecting ')'
+C:/Users/Salem/Desktop/GP Project/health_chain/app/views/dashboard/index.html.erb:166: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/dashboard/index.html.erb:48: syntax error, unexpected '<'
+app/views/dashboard/index.html.erb:50: unknown regexp options - dv
+app/views/dashboard/index.html.erb:51: syntax error, unexpected '<'
+app/views/dashboard/index.html.erb:53: unknown regexp option - h
+app/views/dashboard/index.html.erb:53: syntax error, unexpected tINTEGER, expecting ')'
+app/views/dashboard/index.html.erb:54: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+app/views/dashboard/index.html.erb:54: unknown regexp option - p
+app/views/dashboard/index.html.erb:55: syntax error, unexpected '<'
+app/views/dashboard/index.html.erb:55: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+app/views/dashboard/index.html.erb:55: unknown regexp option - p
+app/views/dashboard/index.html.erb:56: syntax error, unexpected '<'
+app/views/dashboard/index.html.erb:56: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+app/views/dashboard/index.html.erb:56: unknown regexp option - p
+app/views/dashboard/index.html.erb:57: syntax error, unexpected '<'
+app/views/dashboard/index.html.erb:57: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+app/views/dashboard/index.html.erb:57: unknown regexp option - p
+app/views/dashboard/index.html.erb:58: syntax error, unexpected '<'
+app/views/dashboard/index.html.erb:58: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+app/views/dashboard/index.html.erb:58: unknown regexp option - p
+app/views/dashboard/index.html.erb:59: syntax error, unexpected '<'
+app/views/dashboard/index.html.erb:60: syntax error, unexpected '<'
+app/views/dashboard/index.html.erb:60: syntax error, unexpected keyword_class, expecting ')'
+app/views/dashboard/index.html.erb:60: syntax error, unexpected tCONSTANT, expecting keyword_do or '{' or '('
+app/views/dashboard/index.html.erb:61: syntax error, unexpected '<'
+app/views/dashboard/index.html.erb:62: unknown regexp options - dv
+app/views/dashboard/index.html.erb:63: syntax error, unexpected '<'
+app/views/dashboard/index.html.erb:65: unknown regexp options - dv
+app/views/dashboard/index.html.erb:66: syntax error, unexpected '<'
+app/views/dashboard/index.html.erb:67: syntax error, unexpected '<'
+app/views/dashboard/index.html.erb:68: syntax error, unexpected '<'
+app/views/dashboard/index.html.erb:69: unknown regexp option - a
+app/views/dashboard/index.html.erb:70: syntax error, unexpected '<'
+app/views/dashboard/index.html.erb:71: unknown regexp options - dv
+app/views/dashboard/index.html.erb:72: syntax error, unexpected '<'
+app/views/dashboard/index.html.erb:73: syntax error, unexpected '<'
+app/views/dashboard/index.html.erb:73: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/dashboard/index.html.erb:74: syntax error, unexpected '<'
+app/views/dashboard/index.html.erb:75: unknown regexp options - dv
+app/views/dashboard/index.html.erb:76: syntax error, unexpected '<'
+app/views/dashboard/index.html.erb:76: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/dashboard/index.html.erb:77: syntax error, unexpected '<'
+app/views/dashboard/index.html.erb:78: unknown regexp options - dv
+app/views/dashboard/index.html.erb:79: syntax error, unexpected '<'
+app/views/dashboard/index.html.erb:79: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/dashboard/index.html.erb:80: syntax error, unexpected '<'
+app/views/dashboard/index.html.erb:80: syntax error, unexpected $undefined, expecting keyword_do or '{' or '('
+app/views/dashboard/index.html.erb:162: syntax error, unexpected keyword_end, expecting ')'
+app/views/dashboard/index.html.erb:164: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/dashboard/index.html.erb:166: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:37:47 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mAdmin Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `admins` WHERE `admins`.`user_id` = 3 LIMIT 1[0m
+  Rendered dashboard/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 3116ms (Views: 3083.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:45:19 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mAdmin Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `admins` WHERE `admins`.`user_id` = 3 LIMIT 1[0m
+  Rendered dashboard/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 5895ms (Views: 5861.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:47:06 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mAdmin Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `admins` WHERE `admins`.`user_id` = 3 LIMIT 1[0m
+  Rendered dashboard/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 2930ms (Views: 2899.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:55:03 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mAdmin Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `admins` WHERE `admins`.`user_id` = 3 LIMIT 1[0m
+  Rendered dashboard/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 3155ms (Views: 3122.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:55:16 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mAdmin Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `admins` WHERE `admins`.`user_id` = 3 LIMIT 1[0m
+  Rendered dashboard/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 2957ms (Views: 2881.0ms | ActiveRecord: 1.0ms)
+
+

@@ -1,4 +1,4 @@
-<%- if true %>
+<%- if current_user.admin?  %>
     
     <div class="page profile-settings">
 <div class="profile-picture">
@@ -38,28 +38,19 @@
   <br><br><br>
 </div>
 
-
-
-
-
-
-
-
-
-
 <%- else %>
     <div id="dashboard" class="dashboard page">
     <div class="side-menu white">
         <div class="profile-image-x">
             <%= image_tag("https://media.creativemornings.com/uploads/user/avatar/49419/Bechtel_Profile_Square.jpg", :alt => "Health Chain") %>
             <div class="profile-info">
-                <p><%= current_user.name || current_user.email%></p>
-                <p class="email"><%= current_user.email %></p>
-                <%= link_to "Profile Settings", edit_user_registration_path %>
+                <p><%# current_user.name || current_user.email%></p>
+                <p class="email"><%# current_user.email %></p>
+                <%# link_to "Profile Settings", edit_user_registration_path %>
             </div>
         </div>
         <div class="patient-info">
-            <h2 class="txt-lvl-3 patient-info-title">Patient Info</h2>
+            <h2 class="txt-lvl-3 patient-info-title add-visit">Add Visit</h2>
             <p><strong>Last Visit: </strong>July 5, 2017</p>
             <p><strong>Last Visit: </strong>July 5, 2017</p>
             <p><strong>Last Visit: </strong>July 5, 2017</p>
@@ -168,4 +159,25 @@
         }
     </script>
 
+<div class="add-visit-container" style="display:none;">
+    <div class="add-visit-modal">
+        <h2 class="section-title m-t-5">Add New Visit</h2>
+        <div class="filed form-group">
+            <label class="default-label">Name</label>
+            <input class="default-input" type="text">
+        </div>
+        <div class="filed form-group">
+            <label class="default-label">Type</label>
+            <input class="default-input" type="text">
+        </div>
+        <div class="filed form-group">
+            <label class="default-label">Details</label>
+            <textarea class="default-input"></textarea>
+        </div>
+        <div class="filed form-group">
+            <button class="default-btn btn-right">Add</button>
+        </div>
+    </div>  
+</div>
 <%- end %>
+
