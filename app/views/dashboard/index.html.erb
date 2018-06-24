@@ -44,9 +44,9 @@
         <div class="profile-image-x">
             <%= image_tag("https://media.creativemornings.com/uploads/user/avatar/49419/Bechtel_Profile_Square.jpg", :alt => "Health Chain") %>
             <div class="profile-info">
-                <p><%# current_user.name || current_user.email%></p>
-                <p class="email"><%# current_user.email %></p>
-                <%# link_to "Profile Settings", edit_user_registration_path %>
+                <p><%= (current_user.name || current_user.email) rescue current_user.email%></p>
+                <p class="email"><%= current_user.email %></p>
+                <%= link_to "Profile Settings", edit_user_registration_path %>
             </div>
         </div>
         <div class="patient-info">
@@ -176,8 +176,20 @@
         </div>
         <div class="filed form-group">
             <button class="default-btn btn-right">Add</button>
+            <button class="default-btn btn-right btn-mr cancel-visit">Cancel</button>
         </div>
     </div>  
 </div>
+<script>
+        let addVisitContainer = document.querySelector('.add-visit-container');
+        let addVisitButton = document.querySelector('.add-visit');
+        let cancelVisitButton = document.querySelector('.cancel-visit');
+        addVisitButton.addEventListener('click', ()=>{
+            addVisitContainer.style.display = "block";
+        });
+        cancelVisitButton.addEventListener('click', ()=>{
+            addVisitContainer.style.display = "none";
+        });
+</script>
 <%- end %>
 

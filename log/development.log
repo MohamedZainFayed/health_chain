@@ -9777,3 +9777,57 @@ Processing by DashboardController#index as HTML
 Completed 200 OK in 2957ms (Views: 2881.0ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:57:10 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mAdmin Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `admins` WHERE `admins`.`user_id` = 3 LIMIT 1[0m
+  Rendered dashboard/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 2879ms (Views: 2794.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:57:32 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mAdmin Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `admins` WHERE `admins`.`user_id` = 3 LIMIT 1[0m
+  Rendered dashboard/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 3784ms (Views: 3738.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:58:18 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mAdmin Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `admins` WHERE `admins`.`user_id` = 3 LIMIT 1[0m
+  Rendered dashboard/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 6963ms (Views: 6928.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:58:39 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mAdmin Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `admins` WHERE `admins`.`user_id` = 3 LIMIT 1[0m
+  Rendered dashboard/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 6889ms (Views: 6847.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 01:59:12 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mAdmin Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `admins` WHERE `admins`.`user_id` = 3 LIMIT 1[0m
+  Rendered dashboard/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 302ms (Views: 249.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-24 02:00:17 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mAdmin Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `admins` WHERE `admins`.`user_id` = 3 LIMIT 1[0m
+  Rendered dashboard/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 3402ms (Views: 3367.2ms | ActiveRecord: 1.0ms)
+
+
