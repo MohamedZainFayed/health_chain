@@ -1,18 +1,62 @@
-<%- if current_user.admin? %>
-    implement admin view here ya salem :v
+<%- if current_user.admin?  %>
+    
+    <div class="page profile-settings">
+<div class="profile-picture">
+  <%= image_tag("http://kokannow.com/wp-content/uploads/2017/12/riktpde_malvan.jpg", :alt => "John Doe") %>
+  <p class="txt-lvl-3 heading-font txt-center"></p>
+  <div class="profile-picture-clip">
+    <%= image_tag("profile-clip.png", :alt => "John Doe") %>
+  </div>
+</div>
+<div class="container-sm">
+<h2 class="section-title m-t-5">Manage Docotrs
+    <div class="title-right">
+        <a href="#" class="add-doctor"><i class="zmdi zmdi-account-add"></i> Add Doctor</a>
+    </div>
+</h2>
+
+<div class="single-doctor inline-block">
+    <p>A Great Docotr Here...</p>
+    <div>
+    <button class="default-btn red-btn btn-right">Remove</button>
+    </div>
+</div>
+<div class="single-doctor inline-block">
+    <p>A Great Docotr Here...</p>
+    <div>
+    <button class="default-btn red-btn btn-right">Remove</button>
+    </div>
+</div>
+<div class="single-doctor inline-block">
+    <p>A Great Docotr Here...</p>
+    <div>
+    <button class="default-btn red-btn btn-right">Remove</button>
+    </div>
+</div>
+
+<div class="inline-block" style="padding-top: 100px;">
+  <br><br><br>
+</div>
+
 <%- else %>
     <div id="dashboard" class="dashboard page">
     <div class="side-menu white">
         <div class="profile-image-x">
             <%= image_tag("https://media.creativemornings.com/uploads/user/avatar/49419/Bechtel_Profile_Square.jpg", :alt => "Health Chain") %>
             <div class="profile-info">
+<<<<<<< HEAD
                 <p><%= (current_user.name || current_user.email) rescue current_user.email%></p>
                 <p class="email"><%= current_user.email %></p>
                 <%= link_to "Profile Settings", edit_user_registration_path %>
+=======
+                <p><%# current_user.name || current_user.email%></p>
+                <p class="email"><%# current_user.email %></p>
+                <%# link_to "Profile Settings", edit_user_registration_path %>
+>>>>>>> e743bc3daef8a2f578529ec59ace6792e5cba364
             </div>
         </div>
         <div class="patient-info">
-            <h2 class="txt-lvl-3 patient-info-title">Patient Info</h2>
+            <h2 class="txt-lvl-3 patient-info-title add-visit">Add Visit</h2>
             <p><strong>Last Visit: </strong>July 5, 2017</p>
             <p><strong>Last Visit: </strong>July 5, 2017</p>
             <p><strong>Last Visit: </strong>July 5, 2017</p>
@@ -121,4 +165,25 @@
         }
     </script>
 
+<div class="add-visit-container" style="display:none;">
+    <div class="add-visit-modal">
+        <h2 class="section-title m-t-5">Add New Visit</h2>
+        <div class="filed form-group">
+            <label class="default-label">Name</label>
+            <input class="default-input" type="text">
+        </div>
+        <div class="filed form-group">
+            <label class="default-label">Type</label>
+            <input class="default-input" type="text">
+        </div>
+        <div class="filed form-group">
+            <label class="default-label">Details</label>
+            <textarea class="default-input"></textarea>
+        </div>
+        <div class="filed form-group">
+            <button class="default-btn btn-right">Add</button>
+        </div>
+    </div>  
+</div>
 <%- end %>
+
