@@ -4,12 +4,21 @@ class DashboardController < ApplicationController
     require 'uri'
     require 'json'
 
-    def index 
+    def index
+        @users = User.all
     end
 
     def new_doctor
         redirect_to "/", notice: "Access not granted!" unless current_user && current_user.admin?
         @doctor = User.new
+    end
+
+    def delete_doctor
+        user = User.find_by_id params[:id]
+        chain_url = "http://ec2-18-216-204-179.us-east-2.compute.amazonaws.com:3000/api/doctor/#{user.national_id}"
+        RestClient.delete(chain_url)
+        user.delete
+        redirect_to "/"
     end
 
     def create_doctor

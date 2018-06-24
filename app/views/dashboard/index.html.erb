@@ -11,28 +11,21 @@
 <div class="container-sm">
 <h2 class="section-title m-t-5">Manage Docotrs
     <div class="title-right">
-        <a href="#" class="add-doctor"><i class="zmdi zmdi-account-add"></i> Add Doctor</a>
+        <a href="/new_doctor" class="add-doctor"><i class="zmdi zmdi-account-add"></i> Add Doctor</a>
     </div>
 </h2>
 
-<div class="single-doctor inline-block">
-    <p>A Great Docotr Here...</p>
-    <div>
-    <button class="default-btn red-btn btn-right">Remove</button>
-    </div>
-</div>
-<div class="single-doctor inline-block">
-    <p>A Great Docotr Here...</p>
-    <div>
-    <button class="default-btn red-btn btn-right">Remove</button>
-    </div>
-</div>
-<div class="single-doctor inline-block">
-    <p>A Great Docotr Here...</p>
-    <div>
-    <button class="default-btn red-btn btn-right">Remove</button>
-    </div>
-</div>
+<%- @users.each do |user|%>
+    <%- unless user.admin? %>
+        <div class="single-doctor inline-block">
+            <p><b>Email: </b><%= user.email %></p>
+            <div>
+            <%= button_to('Remove', "/dashboard/delete_doctor/#{user.id}",
+          method: "delete", data: { confirm: 'Are you sure?', disable_with: 'loading...' }, class: "default-btn red-btn btn-right") %>
+            </div>
+        </div>
+    <%- end %>
+<%- end %>
 
 <div class="inline-block" style="padding-top: 100px;">
   <br><br><br>
@@ -44,15 +37,9 @@
         <div class="profile-image-x">
             <%= image_tag("https://media.creativemornings.com/uploads/user/avatar/49419/Bechtel_Profile_Square.jpg", :alt => "Health Chain") %>
             <div class="profile-info">
-<<<<<<< HEAD
                 <p><%= (current_user.name || current_user.email) rescue current_user.email%></p>
                 <p class="email"><%= current_user.email %></p>
                 <%= link_to "Profile Settings", edit_user_registration_path %>
-=======
-                <p><%# current_user.name || current_user.email%></p>
-                <p class="email"><%# current_user.email %></p>
-                <%# link_to "Profile Settings", edit_user_registration_path %>
->>>>>>> e743bc3daef8a2f578529ec59ace6792e5cba364
             </div>
         </div>
         <div class="patient-info">
