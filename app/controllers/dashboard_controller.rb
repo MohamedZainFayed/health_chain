@@ -16,9 +16,9 @@ class DashboardController < ApplicationController
     def delete_doctor
         user = User.find_by_id params[:id]
         chain_url = "http://ec2-18-216-204-179.us-east-2.compute.amazonaws.com:3000/api/doctor/#{user.national_id}"
-        RestClient.delete(chain_url)
+        RestClient.delete(chain_url) rescue nil
         user.delete
-        redirect_to "/"
+        redirect_to "/", notice: "Doctor removed!"
     end
 
     def create_doctor
