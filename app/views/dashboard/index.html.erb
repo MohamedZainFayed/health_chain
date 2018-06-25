@@ -42,23 +42,21 @@
   </div>
 </div>
 <div class="container-sm">
-<div class="form-group">
-        <label class="default-label">Search for patients</label>
-        <input type="text" class="default-input">
-</div>
-<div class="form-group">
-        <button class="default-btn btn-right">Search</button>
-</div>
+<%= form_for(@patient, url: "/dashboard/get_info") do |f| %>
+    <label class="default-label">Search for patients by national ID</label>
+    <%= f.text_field :id, style: "background: transparent;", class:"default-input", required: true %>
+    <%= f.submit "Search", class:"default-btn btn-right" %>
+<% end %>
 <h2 class="section-title">Search Results</h2>
 <div class="patient-search-results">
-    <div class="single-doctor inline-block">
-        <a href="#">
-            <p><b>Name: </b> John Doe</p>
-        </a>
-        <div>
-        <button class="default-btn red-btn btn-right">Remove</button>
+    <%- if @result %>
+        <div class="single-doctor inline-block">
+            
+            <a href="/show_patient/<%= @result['patientID'] %>">
+                <p><b>Name: </b> <%= "#{@result['fName']} #{@result['lname']}" %></p>
+            </a>
         </div>
-    </div>
+    <% end %>
 </div>
 <br><br>
 <h2 class="section-title m-t-5"></h2>

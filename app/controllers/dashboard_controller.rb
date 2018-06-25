@@ -6,10 +6,16 @@ class DashboardController < ApplicationController
 
     def index
         @users = User.all
+        @patient = Patient.new
+        puts params
+        if params[:id] && !Patient.where(id: params[:id]).empty?
+            uri = URI("http://ec2-18-216-204-179.us-east-2.compute.amazonaws.com:3000/api/patient/#{params[:id]}")
+            @result = JSON.parse(Net::HTTP.get(uri))
+        end
     end
     
     def show_patient
-        redirect_to "/", notice: "invalid patient national id" if params[:id].nil? && Patient.where(national_id: params[:id]).empty?
+        redirect_to "/", notice: "invalid patient national id" if params[:id].nil? || Patient.where(id: params[:id]).empty?
         uri = URI("http://ec2-18-216-204-179.us-east-2.compute.amazonaws.com:3000/api/patient/#{params[:id]}")
         @record = Record.new
         @patient = JSON.parse(Net::HTTP.get(uri)) rescue nil
@@ -100,7 +106,6 @@ class DashboardController < ApplicationController
         chain_url = "http://ec2-18-216-204-179.us-east-2.compute.amazonaws.com:3000/api/patient"
         patient = Patient.new params.require(:patient).permit(:id, :fname, :lname, :age, :gender, :phone_number, :city, :street)
         if Patient.where(id: params[:patient][:id]).empty? && patient.save
-            puts p
             RestClient.post(chain_url, p.to_json, {content_type: :json, accept: :json})
             redirect_to "/dashboard", notice: "Patient added!"
         else
