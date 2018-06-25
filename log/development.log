@@ -11496,3 +11496,275 @@ Processing by Users::SessionsController#new as HTML
 Completed 200 OK in 499ms (Views: 497.3ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/I7FAQNti9x+ZpUH/74IuTuQUQOhJMNBmcHiFPlTaBdIsHSRwEnYuSNNJBwloCFFcrkiPKVOeGRxaA2l92PNGfQ==" for 127.0.0.1 at 2018-06-25 21:28:32 +0200
+  [1m[35m (1.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/I7FAQNti9x+ZpUH/74IuTuQUQOhJMNBmcHiFPlTaBdIsHSRwEnYuSNNJBwloCFFcrkiPKVOeGRxaA2l92PNGfQ=="):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.4) lib/puma/configuration.rb:225:in `call'
+puma (3.11.4) lib/puma/server.rb:632:in `handle_request'
+puma (3.11.4) lib/puma/server.rb:446:in `process_client'
+puma (3.11.4) lib/puma/server.rb:306:in `block in run'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `call'
+puma (3.11.4) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/users/confirmation?confirmation_token=b4YV9HPTpwgdsGPzV3MF" for 127.0.0.1 at 2018-06-25 21:29:37 +0200
+Processing by Users::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"b4YV9HPTpwgdsGPzV3MF"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`confirmation_token` = 'b4YV9HPTpwgdsGPzV3MF' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[33mUPDATE `users` SET `confirmed_at` = '2018-06-25 19:29:38', `updated_at` = '2018-06-25 19:29:38' WHERE `users`.`id` = 4[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 232ms (ActiveRecord: 37.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2018-06-25 21:29:53 +0200
+Processing by Users::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (319.9ms)
+Completed 200 OK in 733ms (Views: 731.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-06-25 21:32:23 +0200
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"meenb2k1UTomwykvp07MlEx5GJzdxQf6ZLuax0+2mgKWS8NfoCGIbWwvb9kgxLOGBiXXXcdrzoBOwHaEw5/ZrQ==", "user"=>{"email"=>"salem.magdy00@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'salem.magdy00@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[33mUPDATE `users` SET `current_sign_in_at` = '2018-06-25 19:32:23', `last_sign_in_at` = '2018-06-25 19:32:23', `current_sign_in_ip` = '127.0.0.1', `last_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2018-06-25 19:32:23' WHERE `users`.`id` = 4[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 272ms (ActiveRecord: 12.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-25 21:32:23 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mAdmin Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `admins` WHERE `admins`.`user_id` = 4 LIMIT 1[0m
+  Rendered dashboard/index.html.erb within layouts/application (60.0ms)
+Completed 200 OK in 424ms (Views: 316.2ms | ActiveRecord: 44.0ms)
+
+
+Started POST "/dashboard/get_info" for 127.0.0.1 at 2018-06-25 21:32:46 +0200
+Processing by DashboardController#get_info as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K+uDnv7yss02HeMe/BdL2jcfJWs1LObqUbb2kcUUAxskR+euN+Zrmnzxpeh7nTTIfUPqqi+CL5B7zRrSST1AtA==", "patient"=>{"id"=>"1234567899"}, "commit"=>"Search"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/dashboard?id=1234567899
+Completed 302 Found in 20ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/dashboard?id=1234567899" for 127.0.0.1 at 2018-06-25 21:32:46 +0200
+Processing by DashboardController#index as HTML
+  Parameters: {"id"=>"1234567899"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mPatient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `patients` WHERE `patients`.`id` = '1234567899' LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mAdmin Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `admins` WHERE `admins`.`user_id` = 4 LIMIT 1[0m
+  Rendered dashboard/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 908ms (Views: 280.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/show_patient/1234567899" for 127.0.0.1 at 2018-06-25 21:33:04 +0200
+Processing by DashboardController#show_patient as HTML
+  Parameters: {"id"=>"1234567899"}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mPatient Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM `patients` WHERE `patients`.`id` = '1234567899' LIMIT 1[0m
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`national_id` = 'org.acme.medicalchain.doctor' ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 1378ms (ActiveRecord: 91.1ms)
+
+
+  
+NoMethodError (undefined method `name' for nil:NilClass):
+  
+app/controllers/dashboard_controller.rb:26:in `block in show_patient'
+app/controllers/dashboard_controller.rb:25:in `show_patient'
+Started GET "/dashboard?id=1234567899" for 127.0.0.1 at 2018-06-25 21:33:17 +0200
+Processing by DashboardController#index as HTML
+  Parameters: {"id"=>"1234567899"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mPatient Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM `patients` WHERE `patients`.`id` = '1234567899' LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mAdmin Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `admins` WHERE `admins`.`user_id` = 4 LIMIT 1[0m
+  Rendered dashboard/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 754ms (Views: 254.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/new_patient" for 127.0.0.1 at 2018-06-25 21:33:22 +0200
+Processing by DashboardController#new_patient as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/new_patient.html.erb within layouts/application
+  Rendered dashboard/new_patient.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 323ms (Views: 285.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/dashboard/add_patient" for 127.0.0.1 at 2018-06-25 21:33:58 +0200
+Processing by DashboardController#create_patient as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"445UhfZq6RFT713ny/THrecZrW34jH7ScLe+hDlvWEeVygYBZ2afDUB75yf42fsZ/etmgLfE9YOLZCJ4jtKi3g==", "patient"=>{"id"=>"123456788", "fname"=>"Warda", "lname"=>"Ahmed", "age"=>"55", "gender"=>"male", "phone_number"=>"123456789", "city"=>"Cairo", "street"=>"Cairo"}, "commit"=>"Add Patient"}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mPatient Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `patients` WHERE `patients`.`id` = '123456788' LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `patients` (`id`, `created_at`, `updated_at`, `phone_number`, `age`, `fname`, `lname`, `city`, `street`, `gender`) VALUES ('123456788', '2018-06-25 19:33:58', '2018-06-25 19:33:58', '123456789', 55, 'Warda', 'Ahmed', 'Cairo', 'Cairo', 'male')[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 2668ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-25 21:34:01 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mAdmin Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `admins` WHERE `admins`.`user_id` = 4 LIMIT 1[0m
+  Rendered dashboard/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 275ms (Views: 232.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/dashboard/get_info" for 127.0.0.1 at 2018-06-25 21:34:09 +0200
+Processing by DashboardController#get_info as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"miouB4V7ccyjEF1itAqozbCpGc66V+y/NMM8GrMu/Z+Vhko3TG+om+n8G5QzgNff+vXWD6D5JcUeuNBZPwe+MA==", "patient"=>{"id"=>"123456788"}, "commit"=>"Search"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/dashboard?id=123456788
+Completed 302 Found in 8ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/dashboard?id=123456788" for 127.0.0.1 at 2018-06-25 21:34:09 +0200
+Processing by DashboardController#index as HTML
+  Parameters: {"id"=>"123456788"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mPatient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `patients` WHERE `patients`.`id` = '123456788' LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mAdmin Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `admins` WHERE `admins`.`user_id` = 4 LIMIT 1[0m
+  Rendered dashboard/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 774ms (Views: 286.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/show_patient/123456788" for 127.0.0.1 at 2018-06-25 21:34:13 +0200
+Processing by DashboardController#show_patient as HTML
+  Parameters: {"id"=>"123456788"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mPatient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `patients` WHERE `patients`.`id` = '123456788' LIMIT 1[0m
+  Rendering dashboard/show_patient.html.erb within layouts/application
+  Rendered dashboard/show_patient.html.erb within layouts/application (435.3ms)
+Completed 200 OK in 1928ms (Views: 748.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/dashboard/add_record" for 127.0.0.1 at 2018-06-25 21:34:22 +0200
+Processing by DashboardController#add_record as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YXN/opgv1vpBylhpb5aHes5zdCtI9KemRLPAKdxrReRWI+SbBg/78jGDtsKNhkoldNe4PeRR9o6AlJn1T/Tvtg==", "record"=>{"national_id"=>"123456788", "diagnosist"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi"}, "commit"=>"add"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+Started POST "/dashboard/add_record" for 127.0.0.1 at 2018-06-25 21:34:22 +0200
+  [1m[35mSQL (285.9ms)[0m  [1m[32mINSERT INTO `records` (`national_id`, `diagnosist`, `created_at`, `updated_at`) VALUES ('123456788', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi', '2018-06-25 19:34:22', '2018-06-25 19:34:22')[0m
+Processing by DashboardController#add_record as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YXN/opgv1vpBylhpb5aHes5zdCtI9KemRLPAKdxrReRWI+SbBg/78jGDtsKNhkoldNe4PeRR9o6AlJn1T/Tvtg==", "record"=>{"national_id"=>"123456788", "diagnosist"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi"}, "commit"=>"add"}
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `records` (`national_id`, `diagnosist`, `created_at`, `updated_at`) VALUES ('123456788', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi', '2018-06-25 19:34:22', '2018-06-25 19:34:22')[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/show_patient/123456788
+Completed 302 Found in 3085ms (ActiveRecord: 290.9ms)
+
+
+Redirected to http://localhost:3000/show_patient/123456788
+Completed 302 Found in 2774ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/show_patient/123456788" for 127.0.0.1 at 2018-06-25 21:34:25 +0200
+Processing by DashboardController#show_patient as HTML
+  Parameters: {"id"=>"123456788"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mPatient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `patients` WHERE `patients`.`id` = '123456788' LIMIT 1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`national_id` = '12345678910' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`national_id` = '12345678910' ORDER BY `users`.`id` ASC LIMIT 1[0m  [["national_id", "12345678910"], ["LIMIT", 1]]
+  Rendering dashboard/show_patient.html.erb within layouts/application
+  Rendered dashboard/show_patient.html.erb within layouts/application (450.6ms)
+Completed 200 OK in 2742ms (Views: 678.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/show_patient/123456788" for 127.0.0.1 at 2018-06-25 21:34:48 +0200
+Processing by DashboardController#show_patient as HTML
+  Parameters: {"id"=>"123456788"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mPatient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `patients` WHERE `patients`.`id` = '123456788' LIMIT 1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`national_id` = '12345678910' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`national_id` = '12345678910' ORDER BY `users`.`id` ASC LIMIT 1[0m  [["national_id", "12345678910"], ["LIMIT", 1]]
+  Rendering dashboard/show_patient.html.erb within layouts/application
+  Rendered dashboard/show_patient.html.erb within layouts/application (461.7ms)
+Completed 200 OK in 2912ms (Views: 689.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/dashboard/add_record" for 127.0.0.1 at 2018-06-25 21:35:02 +0200
+Processing by DashboardController#add_record as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dGAN5KtrcEa/2qVhKplMLJT+bf4jLQD3LIURpNcwrmF7zGnUYn+pEfU245etEzM+3qKiPzmDyY0G/v3nWxntzg==", "record"=>{"national_id"=>"123456788", "diagnosist"=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.  Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lor"}, "commit"=>"add"}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO `records` (`national_id`, `diagnosist`, `created_at`, `updated_at`) VALUES ('123456788', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.  Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lor', '2018-06-25 19:35:02', '2018-06-25 19:35:02')[0m
+  [1m[35m (0.0ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 5.0ms)
+
+
+  
+ActiveRecord::ValueTooLong (Mysql2::Error: Data too long for column 'diagnosist' at row 1: INSERT INTO `records` (`national_id`, `diagnosist`, `created_at`, `updated_at`) VALUES ('123456788', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.  Why do we use it? It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lor', '2018-06-25 19:35:02', '2018-06-25 19:35:02')):
+  
+app/controllers/dashboard_controller.rb:36:in `add_record'
+Started GET "/show_patient/123456788" for 127.0.0.1 at 2018-06-25 21:35:13 +0200
+Processing by DashboardController#show_patient as HTML
+  Parameters: {"id"=>"123456788"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mPatient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `patients` WHERE `patients`.`id` = '123456788' LIMIT 1[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`national_id` = '12345678910' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`national_id` = '12345678910' ORDER BY `users`.`id` ASC LIMIT 1[0m  [["national_id", "12345678910"], ["LIMIT", 1]]
+  Rendering dashboard/show_patient.html.erb within layouts/application
+  Rendered dashboard/show_patient.html.erb within layouts/application (422.6ms)
+Completed 200 OK in 2732ms (Views: 655.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/dashboard/add_record" for 127.0.0.1 at 2018-06-25 21:35:20 +0200
+Processing by DashboardController#add_record as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"p74f6esi550jd7q70yJeFrp/527B8+PPvRk0kU72z1moEnvZIjY+ymmb/E1UqCEE8CMor9tdKrWXYtjSwt+M9g==", "record"=>{"national_id"=>"123456788", "diagnosist"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi"}, "commit"=>"add"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO `records` (`national_id`, `diagnosist`, `created_at`, `updated_at`) VALUES ('123456788', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi', '2018-06-25 19:35:20', '2018-06-25 19:35:20')[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/show_patient/123456788
+Completed 302 Found in 2682ms (ActiveRecord: 8.0ms)
+
+
+Started GET "/show_patient/123456788" for 127.0.0.1 at 2018-06-25 21:35:23 +0200
+Processing by DashboardController#show_patient as HTML
+  Parameters: {"id"=>"123456788"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mPatient Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `patients` WHERE `patients`.`id` = '123456788' LIMIT 1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`national_id` = '12345678910' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`national_id` = '12345678910' ORDER BY `users`.`id` ASC LIMIT 1[0m  [["national_id", "12345678910"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`national_id` = '12345678910' ORDER BY `users`.`id` ASC LIMIT 1[0m  [["national_id", "12345678910"], ["LIMIT", 1]]
+  Rendering dashboard/show_patient.html.erb within layouts/application
+  Rendered dashboard/show_patient.html.erb within layouts/application (442.4ms)
+Completed 200 OK in 3320ms (Views: 681.9ms | ActiveRecord: 0.0ms)
+
+

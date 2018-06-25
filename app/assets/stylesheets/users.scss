@@ -118,7 +118,8 @@ p.alert-danger, p.alert-success , #error_explanation{
     box-sizing: border-box;
     animation: fromBottom 0.6s ease;
     animation-fill-mode: forwards;
-    transform: translateY(300px)
+    transform: translateY(300px);
+    z-index: 99;
 }
 @keyframes fromBottom{
     0%{
