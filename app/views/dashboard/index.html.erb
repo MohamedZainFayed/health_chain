@@ -1,6 +1,6 @@
 <%- if current_user.admin?  %>
     
-    <div class="page profile-settings">
+<div class="page profile-settings">
 <div class="profile-picture">
   <%= image_tag("http://kokannow.com/wp-content/uploads/2017/12/riktpde_malvan.jpg", :alt => "John Doe") %>
   <p class="txt-lvl-3 heading-font txt-center"></p>
@@ -32,122 +32,50 @@
 </div>
 
 <%- else %>
-    <div id="dashboard" class="dashboard page">
-    <div class="side-menu white">
-        <div class="profile-image-x">
-            <%= image_tag("https://media.creativemornings.com/uploads/user/avatar/49419/Bechtel_Profile_Square.jpg", :alt => "Health Chain") %>
-            <div class="profile-info">
-                <p><%= (current_user.name || current_user.email) rescue current_user.email%></p>
-                <p class="email"><%= current_user.email %></p>
-                <%= link_to "Profile Settings", edit_user_registration_path %>
-            </div>
-        </div>
-        <div class="patient-info">
-            <h2 class="txt-lvl-3 patient-info-title add-visit">Add Visit</h2>
-            <p><strong>Last Visit: </strong>July 5, 2017</p>
-            <div class="txt-center">
-                <a href="/new_patient" class="full-details m-t-3">Add patient</a>
-                <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "full-details" %><br /><br />
-            </div>
-        </div>
 
-    </div>
-        <div class="content">
-        <div class="form-group m-t-5">
-        <label class="default-label">Search for...</label>
-        <%= form_for(@patient, url: "/dashboard/get_info") do |f| %>
-            <%= f.text_field :id, style: "background: transparent;", class:"default-input", required: true %>
-            <%= f.submit "Get data", class:"default-btn btn-right" %>
-        <% end %>
-        </div>
-            <div class="dash-nav white" style="display: none;">
-                <a href="#upcoming">Upcoming</a>
-                <a href="#history" class="active">Patients History</a>
-                <a href="#audience">Audience</a>
-            </div>
-            <div class="dash-sections">
-            <div class="dash-section" id="upcoming">
-                    <h2 class="txt-lvl-4 dash-title">Upcoming</h2>
-                </div>
-                <div class="dash-section" id="audience">
-                    <h2 class="txt-lvl-4 dash-title">Audience</h2>
-                </div>
-                <div class="dash-section active" id="history">
-                    <h2 class="txt-lvl-4 dash-title">Patient's History</h2>
-                    <div class="visits">
-                        <%- @records.each do |r| %>
-                            <div class="single-visit">
-                            <%= image_tag("https://dermamedical.co.uk/wp-content/uploads/2016/02/Juinior-doctor-.jpg", :alt => "Health Chain") %>
-                                <div class="visit-info">
-                                    <p><strong>Name: </strong><%= "Dr. #{r['doctor']}"%></p>
-                                </div>
-                                <div class="visit-details">
-                                <p><strong>Visit Details:</strong></p>
-                                <p><%= r["diagnosist"] %></p>
-                                </div>
-                            </div>
-                        <%- end %>
-                    </div>
-                </div>
-            </div>
-            <div style="display:none;">
-            <%= link_to "Sign out", destroy_user_session_path, method: :delete %><br /><br />
-            This is the dashboard
-            </div>
-        </div>
-        
-    </div>
-
-
-    <script>
-        let navLinks = document.querySelectorAll('.dash-nav a');
-        let allSections = document.querySelectorAll('.dash-sections .dash-section');
-        for(let i = 0; i< navLinks.length ; i++){
-            navLinks[i].addEventListener('click', (e)=>{
-                e.preventDefault();
-                // console.log(e);
-                let id = e.target.hash;
-                let activeDiv = document.getElementById(id.slice(1));
-                for(let j=0 ; j< allSections.length; j++){
-                    allSections[j].classList.remove('active');
-                }
-                for(let k=0 ; k< navLinks.length; k++){
-                    navLinks[k].classList.remove('active');
-                }
-                activeDiv.classList += " active";
-                e.target.classList += " active";
-            })
-        }
-    </script>
-
-<div class="add-visit-container" style="display:none;">
-    <div class="add-visit-modal">
-        <h2 class="section-title m-t-5">Add New Visit</h2>
-        <%= form_for(@record, url: "/dashboard/add_record") do |f| %>
-            <div class="filed form-group">
-                <label class="default-label">Patient national ID</label>
-                <%= f.text_field :national_id, class: "default-input"%>
-            </div>
-            <div class="filed form-group">
-                <label class="default-label">Details</label>
-                <%= f.text_field :diagnosist, class:"default-input" %>
-            </div>
-            <div class="filed form-group">
-                <%= f.submit "add", class:"default-btn btn-right" %>
-            </div>
-        <% end %>
-    </div>  
+<div class="page profile-settings">
+<div class="profile-picture">
+  <%= image_tag("http://kokannow.com/wp-content/uploads/2017/12/riktpde_malvan.jpg", :alt => "John Doe") %>
+  <p class="txt-lvl-3 heading-font txt-center"></p>
+  <div class="profile-picture-clip">
+    <%= image_tag("profile-clip.png", :alt => "John Doe") %>
+  </div>
 </div>
-<script>
-        let addVisitContainer = document.querySelector('.add-visit-container');
-        let addVisitButton = document.querySelector('.add-visit');
-        let cancelVisitButton = document.querySelector('.cancel-visit');
-        addVisitButton.addEventListener('click', ()=>{
-            addVisitContainer.style.display = "block";
-        });
-        cancelVisitButton.addEventListener('click', ()=>{
-            addVisitContainer.style.display = "none";
-        });
-</script>
+<div class="container-sm">
+<div class="form-group">
+        <label class="default-label">Search for patients</label>
+        <input type="text" class="default-input">
+</div>
+<div class="form-group">
+        <button class="default-btn btn-right">Search</button>
+</div>
+<h2 class="section-title">Search Results</h2>
+<div class="patient-search-results">
+    <div class="single-doctor inline-block">
+        <a href="#">
+            <p><b>Name: </b> John Doe</p>
+        </a>
+        <div>
+        <button class="default-btn red-btn btn-right">Remove</button>
+        </div>
+    </div>
+</div>
+<br><br>
+<h2 class="section-title m-t-5"></h2>
+<div class="txt-center">
+    <button class="default-btn btn-mr"><i class="zmdi zmdi-account-add"></i> Add Patient</button>
+    <button class="default-btn btn-mr">Manage Profile</button>
+    <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "default-btn" %>
+</div>
+<div class="inline-block" style="padding-top: 100px;">
+  <br><br><br>
+</div>
+    <div class="form-group m-t-5">
+        <%# <label class="default-label">Search for...</label> %>
+        <%# form_for(@patient, url: "/dashboard/get_info") do |f| %>
+            <%# f.text_field :id, style: "background: transparent;", class:"default-input", required: true %>
+            <%# f.submit "Get data", class:"default-btn btn-right" %>
+        <%# end %>
+        </div>
 <%- end %>
 

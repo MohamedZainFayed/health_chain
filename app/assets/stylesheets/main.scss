@@ -102,7 +102,7 @@ button{
 }
 .default-btn{
     background: #fff;
-    color: $kinda-blue;
+    color: $kinda-blue !important;
     text-transform: uppercase;
     text-align: center;
     padding: 10px 15px;
@@ -111,17 +111,18 @@ button{
     min-width: 120px;
     cursor: pointer;
     transition: 0.3s;
+    font-size: 14px;
 }
 .default-btn:hover{
     background: $kinda-blue;
-    color: $white;
+    color: $white !important;
 }
 .red-btn{
     border-color: $red;
-    color: $red;
+    color: $red !important;
 }
 .red-btn:hover{
-    color: $white;
+    color: $white !important;
     background: $red;
     border-color: $red;
 }
