@@ -63,8 +63,8 @@
 <br><br>
 <h2 class="section-title m-t-5"></h2>
 <div class="txt-center">
-    <button class="default-btn btn-mr"><i class="zmdi zmdi-account-add"></i> Add Patient</button>
-    <button class="default-btn btn-mr">Manage Profile</button>
+    <%= link_to "Add patient", "/new_patient", class: "default-btn btn-mr" %>
+    <%= link_to "Manage profile", edit_user_registration_path, class: "default-btn btn-mr" %>
     <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "default-btn" %>
 </div>
 <div class="inline-block" style="padding-top: 100px;">

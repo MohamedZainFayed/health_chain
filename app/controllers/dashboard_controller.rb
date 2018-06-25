@@ -5,15 +5,16 @@ class DashboardController < ApplicationController
     require 'json'
 
     def index
-        @record = Record.new
         @users = User.all
-        @patient = Patient.new
-        uri = URI("http://ec2-18-216-204-179.us-east-2.compute.amazonaws.com:3000/api/record")
-        @records = []
-        if params[:id]
-            @records = JSON.parse(Net::HTTP.get(uri))
-            @records = @records.select{|r| r if r["owner"] == "resource:org.acme.medicalchain.patient##{params[:id]}"}
-        end
+    end
+    
+    def show_patient
+        redirect_to "/", notice: "invalid patient national id" if params[:id].nil? && Patient.where(national_id: params[:id]).empty?
+        uri = URI("http://ec2-18-216-204-179.us-east-2.compute.amazonaws.com:3000/api/patient/#{params[:id]}")
+        @record = Record.new
+        @patient = JSON.parse(Net::HTTP.get(uri)) rescue nil
+        @records = JSON.parse(Net::HTTP.get(uri)) rescue []
+        @records = @records.select{|r| r if r["owner"] == "resource:org.acme.medicalchain.patient##{params[:id]}"}
         for i in 0..@records.length
             @records[i]["doctor"] = User.where(national_id: @records[i]["writer"]["resource:org.acme.medicalchain.doctor#".length .. @records[i]["writer"].length]).first.name if @records[i]
         end

@@ -32,5 +32,6 @@ Rails.application.routes.draw do
   post "/dashboard/get_info" => "dashboard#get_info"
   post "/dashboard/add_record" => "dashboard#add_record"
   match '/dashboard/delete_doctor/:id' => 'dashboard#delete_doctor', via: [:delete]
+  match '/show_patient/:id' => 'dashboard#show_patient', via: [:get]
   get "/show_patient" => "dashboard#show_patient"
 end
