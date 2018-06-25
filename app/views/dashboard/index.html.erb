@@ -25,12 +25,12 @@
             </div>
         </div>
     <%- end %>
+
+<%- end %>
 <h2 class="section-title m-t-3"></h2>
 <div class="txt-center">
     <button class="default-btn">Log Out</button>
 </div>
-<%- end %>
-
 <div class="inline-block" style="padding-top: 100px;">
   <br><br><br>
 </div>
@@ -47,9 +47,13 @@
 </div>
 <div class="container-sm">
 <%= form_for(@patient, url: "/dashboard/get_info") do |f| %>
-    <label class="default-label">Search for patients by national ID</label>
-    <%= f.text_field :id, style: "background: transparent;", class:"default-input", required: true %>
-    <%= f.submit "Search", class:"default-btn btn-right" %>
+    <div class="form-group">
+        <label class="default-label">Search for patients by national ID</label>
+        <%= f.text_field :id, style: "background: transparent;", class:"default-input", required: true %>
+    </div>
+    <div class="form-group">
+        <%= f.submit "Search", class:"default-btn btn-right" %>
+    </div>
 <% end %>
 <h2 class="section-title">Search Results</h2>
 <div class="patient-search-results">
