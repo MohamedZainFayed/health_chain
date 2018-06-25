@@ -84,10 +84,7 @@
     <div class="add-visit-modal">
         <h2 class="section-title m-t-5">Add New Visit</h2>
         <%= form_for(@record, url: "/dashboard/add_record") do |f| %>
-            <div class="filed form-group">
-                <label class="default-label">Patient national ID</label>
-                <%= f.text_field :national_id, class: "default-input"%>
-            </div>
+            <%= f.hidden_field :national_id, value: params[:id], class: "default-input"%>
             <div class="filed form-group">
                 <label class="default-label">Details</label>
                 <%= f.text_field :diagnosist, class:"default-input" %>

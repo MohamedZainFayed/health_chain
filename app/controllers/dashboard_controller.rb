@@ -19,6 +19,7 @@ class DashboardController < ApplicationController
         uri = URI("http://ec2-18-216-204-179.us-east-2.compute.amazonaws.com:3000/api/patient/#{params[:id]}")
         @record = Record.new
         @patient = JSON.parse(Net::HTTP.get(uri)) rescue nil
+        uri = URI("http://ec2-18-216-204-179.us-east-2.compute.amazonaws.com:3000/api/record")
         @records = JSON.parse(Net::HTTP.get(uri)) rescue []
         @records = @records.select{|r| r if r["owner"] == "resource:org.acme.medicalchain.patient##{params[:id]}"}
         for i in 0..@records.length
@@ -40,9 +41,9 @@ class DashboardController < ApplicationController
             }
             chain_url = "http://ec2-18-216-204-179.us-east-2.compute.amazonaws.com:3000/api/record"
             RestClient.post(chain_url, p.to_json, {content_type: :json, accept: :json})
-            redirect_to "/dashboard", notice: "Record saved!"
+            redirect_to "/show_patient/#{@record.national_id}", notice: "Record saved!"
         else
-            redirect_to "/dashboard", notice: "Record not saved!"
+            redirect_to "/show_patient/#{@record.national_id}", notice: "Record not saved!"
         end
     end
 
