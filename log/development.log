@@ -11768,3 +11768,264 @@ Processing by DashboardController#show_patient as HTML
 Completed 200 OK in 3320ms (Views: 681.9ms | ActiveRecord: 0.0ms)
 
 
+Started POST "/dashboard/add_record" for 127.0.0.1 at 2018-06-25 21:38:39 +0200
+Processing by DashboardController#add_record as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mSXIaYGSQE9tNn7V1IQ5JB5XdbXMuSC9x2hnMMqv/96WiaxZSIaZGCfaOCNTDkY2VAu6dNYX6cftE4tzRoa8cQ==", "record"=>{"national_id"=>"123456788", "diagnosist"=>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi"}, "commit"=>"add"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO `records` (`national_id`, `diagnosist`, `created_at`, `updated_at`) VALUES ('123456788', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi', '2018-06-25 19:38:39', '2018-06-25 19:38:39')[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/show_patient/123456788
+Completed 302 Found in 2728ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/show_patient/123456788" for 127.0.0.1 at 2018-06-25 21:38:42 +0200
+Processing by DashboardController#show_patient as HTML
+  Parameters: {"id"=>"123456788"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mPatient Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `patients` WHERE `patients`.`id` = '123456788' LIMIT 1[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`national_id` = '12345678910' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`national_id` = '12345678910' ORDER BY `users`.`id` ASC LIMIT 1[0m  [["national_id", "12345678910"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`national_id` = '12345678910' ORDER BY `users`.`id` ASC LIMIT 1[0m  [["national_id", "12345678910"], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`national_id` = '12345678910' ORDER BY `users`.`id` ASC LIMIT 1[0m  [["national_id", "12345678910"], ["LIMIT", 1]]
+  Rendering dashboard/show_patient.html.erb within layouts/application
+  Rendered dashboard/show_patient.html.erb within layouts/application (423.6ms)
+Completed 200 OK in 3647ms (Views: 665.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-26 02:16:03 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mAdmin Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `admins` WHERE `admins`.`user_id` = 3 LIMIT 1[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[36mCACHE Admin Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `admins` WHERE `admins`.`user_id` = 3 LIMIT 1[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[36mAdmin Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `admins` WHERE `admins`.`user_id` = 4 LIMIT 1[0m
+  Rendered dashboard/index.html.erb within layouts/application (33.0ms)
+Completed 200 OK in 6976ms (Views: 6921.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-26 02:35:10 +0200
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Processing by WelcomeController#index as HTML
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-26 02:35:10 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mAdmin Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `admins` WHERE `admins`.`user_id` = 4 LIMIT 1[0m
+  Rendered dashboard/index.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 4297ms (Views: 4264.0ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-06-26 02:35:19 +0200
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9fnyXyoWJ6+dNpi3dLndRdkhNAJZoNjPX5eurwFWOzD6VZZv4wL++Nfa3kHzM6JXk337w0MOEbV17ELsjX94nw=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 24ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-26 02:35:19 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 306ms (Views: 303.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-06-26 02:35:58 +0200
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ncy0EiYxlvKyA1605knSOTMsNNu6lVxXiZHSr2XQyXzqtwh92ODI1P+CZFybN+k1SL2LB0HFNEsmOQUItcQc6Q==", "user"=>{"email"=>"salimmagdi@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'salimmagdi@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[33mUPDATE `users` SET `current_sign_in_at` = '2018-06-26 00:35:59', `last_sign_in_at` = '2018-06-25 18:59:20', `sign_in_count` = 8, `updated_at` = '2018-06-26 00:35:59' WHERE `users`.`id` = 3[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 262ms (ActiveRecord: 9.5ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-26 02:35:59 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mAdmin Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `admins` WHERE `admins`.`user_id` = 3 LIMIT 1[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  [1m[36mCACHE Admin Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `admins` WHERE `admins`.`user_id` = 3 LIMIT 1[0m  [["user_id", 3], ["LIMIT", 1]]
+  [1m[36mAdmin Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `admins` WHERE `admins`.`user_id` = 4 LIMIT 1[0m
+  Rendered dashboard/index.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 3942ms (Views: 3900.1ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-26 02:36:38 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 3244ms (Views: 3242.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-06-26 02:36:48 +0200
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hb2PrqHvUo8JYhxhB0ucBUhYg8fTOXdLDe4vY2ymOfCfRz0YP5GbX3/ru/IPSP9BR9KcfIokm0Gp0sg4XQXSOg==", "user"=>{"email"=>"salem.magdy00@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'salem.magdy00@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE `users` SET `current_sign_in_at` = '2018-06-26 00:36:49', `sign_in_count` = 2, `updated_at` = '2018-06-26 00:36:49' WHERE `users`.`id` = 4[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 211ms (ActiveRecord: 10.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-26 02:36:49 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mAdmin Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `admins` WHERE `admins`.`user_id` = 4 LIMIT 1[0m
+  Rendered dashboard/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 306ms (Views: 270.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-26 02:37:22 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mAdmin Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `admins` WHERE `admins`.`user_id` = 4 LIMIT 1[0m
+  Rendered dashboard/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 3274ms (Views: 3217.2ms | ActiveRecord: 2.5ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-06-26 02:37:28 +0200
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Sp0ZwpcNDvsLMoWaCAyIoLY4dawTzkKmKLmWDHPPYEpQZ6t0CXPHK327IgkAD+vkubJqF0rTrqyMhXFXQmyLgA=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-26 02:37:28 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 272ms (Views: 270.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-06-26 02:37:58 +0200
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FXNqSs/2zu0/3L6ErDwbZZF10Zr+JYTdMZl8MnnDNRThLDOpKQ/ytQX8B+NfLlpct4Prfl6BadtUYDKMyAysYg==", "user"=>{"email"=>"salem.magdy00@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'salem.magdy00@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE `users` SET `current_sign_in_at` = '2018-06-26 00:37:58', `last_sign_in_at` = '2018-06-26 00:36:49', `sign_in_count` = 3, `updated_at` = '2018-06-26 00:37:58' WHERE `users`.`id` = 4[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 213ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-26 02:37:58 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mAdmin Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `admins` WHERE `admins`.`user_id` = 4 LIMIT 1[0m
+  Rendered dashboard/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 301ms (Views: 267.4ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-06-26 02:38:17 +0200
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Cx+VI5eEP8SxhW/QXxBdCAOEQd9tIVco98x8q9hvK0//QMzAcX0DnIul1resAhwxJXJ7O82Fui6SNTIVaaCyOQ=="}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 11ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-26 02:38:17 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 3140ms (Views: 3138.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-26 02:38:47 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 3188ms (Views: 3186.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-06-26 02:38:57 +0200
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ex3jJlwTuH6Cb05QcDul6i/uIGWEj1G1ESDEBE9mQbC+0wfFBeid/sa4uQHc3nxanTTpVWvJys8MWmuFDM4NPg==", "user"=>{"email"=>"salem.magdy00@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'salem.magdy00@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (27.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE `users` SET `current_sign_in_at` = '2018-06-26 00:38:57', `last_sign_in_at` = '2018-06-26 00:37:58', `sign_in_count` = 4, `updated_at` = '2018-06-26 00:38:57' WHERE `users`.`id` = 4[0m
+  [1m[35m (12.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 253ms (ActiveRecord: 41.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-26 02:38:57 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mAdmin Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `admins` WHERE `admins`.`user_id` = 4 LIMIT 1[0m
+  Rendered dashboard/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 252ms (Views: 217.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-26 02:39:32 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mAdmin Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM `admins` WHERE `admins`.`user_id` = 4 LIMIT 1[0m
+  Rendered dashboard/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 3086ms (Views: 3039.3ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2018-06-26 02:39:37 +0200
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Jr1h7eAFBWr2w6J7lRfWwos7hXFTdr5XUJqMidk2OsLjc4UOuf4g6rIUVSo58g9yOeFMQbwwJS1N4CMImp52TA=="}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 11ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-06-26 02:39:37 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 291ms (Views: 290.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2018-06-26 02:40:02 +0200
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XOfYrUgvC8f9c4/FNJcElgNBxDw6pKrQ1uPVtmONQdpAvDq5bCuuz5VazsmAr8C+7Uk6iqi09AupMPJS9sSSXg==", "user"=>{"email"=>"salem.magdy00@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'salem.magdy00@gmail.com' LIMIT 1[0m
+  [1m[36mUser Load (29.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE `users` SET `current_sign_in_at` = '2018-06-26 00:40:03', `last_sign_in_at` = '2018-06-26 00:38:57', `sign_in_count` = 5, `updated_at` = '2018-06-26 00:40:03' WHERE `users`.`id` = 4[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/dashboard
+Completed 302 Found in 240ms (ActiveRecord: 35.0ms)
+
+
+Started GET "/dashboard" for 127.0.0.1 at 2018-06-26 02:40:03 +0200
+Processing by DashboardController#index as HTML
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mAdmin Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM `admins` WHERE `admins`.`user_id` = 4 LIMIT 1[0m
+  Rendered dashboard/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 3178ms (Views: 3143.9ms | ActiveRecord: 1.0ms)
+
+

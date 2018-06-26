@@ -116,7 +116,9 @@ p.alert-danger, p.alert-success , #error_explanation{
     width: 220px;
     left: calc(50vw - 110px);
     box-sizing: border-box;
-    animation: fromBottom 0.6s ease;
+    animation-name: fromBottom;
+    animation-duration: 5s;
+    animation-timing-function: ease;
     animation-fill-mode: forwards;
     transform: translateY(300px);
     z-index: 99;
@@ -125,11 +127,17 @@ p.alert-danger, p.alert-success , #error_explanation{
     0%{
         transform: translateY(300px)
     }
-    50%{
+    10%{
         transform: translateY(-20px)
     }
-    100%{
+    20%{
         transform: translateY(0px)
+    }
+    90%{
+        transform: translateY(0px)
+    }
+    100%{
+        transform: translateY(300px)
     }
 }
 
